@@ -48,7 +48,7 @@ Portfolio Site/
 - **Change your photo:** put `photo.jpg` in `assets/`, then in `index.html` change the avatar `<img id="photo" src="" ...>` to `src="assets/photo.jpg"` (and it'll show automatically; the initials fallback disappears).
 - **Colors:** all theme colours live in the `:root{ }` block at the top of the `<style>` section.
 - **Projects:** each project is an `<article class="project">` — copy one to add another. The current grid gives eight projects peer-level treatment: robot, Alleviate, portfolio tracker, bird deterrent, parametric design, flexible antenna, parachute modelling, and investing/quantitative toolkit.
-- **LinkedIn:** the site currently links to `linkedin.com/in/heng-li-chua` (from your portfolio deck). Your resume lists `linkedin.com/in/henglichua` — verify which is live and update both the hero chip and footer if needed.
+- **LinkedIn:** the site links to `linkedin.com/in/heng-li-chua` — confirmed correct (Aug 2026). Your resume lists the old `linkedin.com/in/henglichua`; if you ever update the resume, align it to `heng-li-chua`.
 
 ## Re-deploying after edits
 
