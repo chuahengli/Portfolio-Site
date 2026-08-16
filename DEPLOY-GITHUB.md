@@ -23,8 +23,8 @@ Your free public URL will be:
 1. On your new (empty) repository page, click **"uploading an existing file"** (under "Quick setup").
 2. Open the folder `Portfolio Related/Portfolio Site/` on your computer and **drag the whole contents into the browser window** — that means:
    - `index.html` (the site itself)
-   - the `assets/` folder **as a folder** (drag it in whole so GitHub keeps the folder structure)
-   - `DEPLOY-GITHUB.md` and `SITE-README.md` (optional, but nice)
+   - the `assets/` folder **as a folder** (drag it in whole so GitHub keeps the categorized project structure)
+   - `DEPLOY-GITHUB.md`, `SITE-README.md` and `.gitignore` (optional documentation/configuration)
 3. Scroll down → **"Commit changes"** → **"Commit directly to the main branch"** → **Commit**.
 
 ### Step 3 — Turn on Pages

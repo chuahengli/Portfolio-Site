@@ -1,55 +1,78 @@
 # Portfolio Site — README
 
-Single-page static portfolio for **Chua Heng Li** (Engineering Product Development @ SUTD, Electrical Track, AI Minor), designed to be hosted on **GitHub Pages** for free.
+Single-page static portfolio for **Chua Heng Li**, an Engineering Product Development student at SUTD specialising in electrical engineering with an AI minor.
 
-The site is intentionally framed around **electrical engineering, embedded systems and Python/data engineering**. RF/antenna is one project, not the headline identity. Projects are presented with relatively equal visual weight rather than a single featured project.
+The site is organised around three clear areas:
+
+1. **Engineering projects** — embedded firmware, electronics prototyping, PCB design, engineering analysis, machine learning and electromagnetics.
+2. **Python, data & equity research** — the portfolio tracker and the broader structured research program.
+3. **Experience & education** — SUTD, UOB Kay Hian, leadership, awards and technical toolkit.
 
 ## Folder structure
 
 ```
 Portfolio Site/
-├── index.html                  ← the entire site (self-contained HTML + CSS + tiny JS)
+├── index.html                  ← complete self-contained site
 ├── assets/
-│   ├── tracker-sample-preview.png   ← sample-data preview of the Stock Tracker dashboard
-│   ├── alleviate-montecarlo.png     ← Monte-Carlo torque model output ('Alleviate' project)
-│   ├── antenna-s11.png              ← S11 return-loss plot (2.45 GHz flexible antenna)
-│   ├── robot-arm-subsystem.svg      ← arm-subsystem function diagram (EDI robot)
-│   ├── robot-system-flow.svg        ← system-level function diagram (spare)
-│   ├── bird-main-structure.png      ← bird-deterrent mechanism structure render
-│   ├── dti-circuit.png              ← bird-deterrent circuit-side design
-│   ├── semi-1st-prize-cert.png      ← SEMI Tech Zoomers 2026 1st Prize certificate
-│   ├── apex-one-raft-cert.pdf       ← APEX "One Raft One Nation" certificate (3 Aug 2025)
-│   ├── dti-sustainability-cert.pdf  ← DTI Sustainability Practice Prize certificate
-│   ├── parachute-cover.jpg          ← modelling/data-analysis project preview
-│   ├── parachute-study.pdf          ← modelling/data-analysis project report
-│   ├── parametric/                  ← Grasshopper/Python design visuals + deck
-│   ├── alleviate/                   ← kinematics output
-│   ├── robot/                       ← actual 30.007 prototype, PCB, schematic and demo
-│   └── Heng-Li-Portfolio-Deck.pdf   ← downloadable one-page portfolio deck
-├── DEPLOY-GITHUB.md             ← step-by-step instructions to publish on GitHub Pages
-└── SITE-README.md               ← this file
+│   ├── portfolio-deck.pdf
+│   ├── projects/
+│   │   ├── engineering/
+│   │   │   ├── alleviate/     ← kinematics + Monte Carlo outputs
+│   │   │   ├── amr/           ← Falali media, diagrams, PCB and PDR files
+│   │   │   ├── antenna/       ← S11 result
+│   │   │   ├── ml/            ← CaDDE ML report + SEM sample
+│   │   │   └── modelling/     ← parachute experiment report + cover
+│   │   └── finance/           ← sample-data tracker preview only
+│   └── recognition/           ← award certificates
+├── DEPLOY-GITHUB.md
+├── SITE-README.md
+└── .gitignore
 ```
 
 ## How it works
 
-- **No build step.** `index.html` + `assets/` is all GitHub Pages needs — upload and go.
-- **No frameworks, no dependencies** except Google Fonts (gracefully falls back to system fonts).
-- Every project writeup is grounded in the workspace facts (portfolio deck, resume, project files).
+- **No build step.** `index.html` + `assets/` is all GitHub Pages needs.
+- **No frameworks or local dependencies.** Google Fonts are optional; the site falls back to system fonts.
+- The descriptions are based on source files in the workspace. Claims should be rechecked against source material when projects change.
+- Private financial holdings, databases, credentials and unverified group photos are not published.
 
-## Design decisions (and why)
+## Content decisions
 
-- **Sample-data dashboard preview instead of a live embed** — your real Moomoo holdings stay private; the preview is clearly labelled as illustrative. A live sanitised demo can be added later if you want.
-- **Actual 30.007 project visuals** — the robot card now uses the final prototype, laser-cutting work, arm schematic and wheel schematic from the project workspace, plus linked PCB/PDR PDFs and a clamp demo video.
-- **Investing research is a project, not a side-interest footer** — the equity research is AI-assisted; the site frames it honestly as a learning project you're building, not as your sole authorship.
-- **Peer-level project grid** — nine projects are shown with similar visual weight: robot, Alleviate, portfolio tracker, bird deterrent, parametric design, antenna simulation, parachute modelling, CaDDE ML and quantitative research toolkit.
+- The opening is deliberately direct: name, degree, specialisation, minor and working areas. It does not use a broad slogan.
+- **Falali — One AMR Fits All** is the team project title. The site separately identifies the arm-subsystem PCB, electronics and firmware contributions.
+- **Alleviate** uses the two verified technical outputs available in the workspace. No unsupported prototype photography was added.
+- **Origaminah** includes the additional battery, wiring, motion-sensor and structure visuals found in the DTI workspace.
+- **Parametric Computational Design** was removed at the user's request.
+- The previous KiCad wheel schematic was removed from the CaDDE and finance projects; it belonged to the AMR work.
+- The finance section uses an illustrative dashboard image only. It does not publish live account data or holdings.
 
 ## Editing tips
 
-- **Change your photo:** put `photo.jpg` in `assets/`, then in `index.html` change the avatar `<img id="photo" src="" ...>` to `src="assets/photo.jpg"` (and it'll show automatically; the initials fallback disappears).
-- **Colors:** all theme colours live in the `:root{ }` block at the top of the `<style>` section.
-- **Projects:** each project is an `<article class="project">` — copy one to add another. The current grid gives eight projects peer-level treatment: robot, Alleviate, portfolio tracker, bird deterrent, parametric design, flexible antenna, parachute modelling, and investing/quantitative toolkit.
-- **LinkedIn:** the site links to `linkedin.com/in/heng-li-chua` — confirmed correct (Aug 2026). Your resume lists the old `linkedin.com/in/henglichua`; if you ever update the resume, align it to `heng-li-chua`.
+- Add or replace a project inside its matching `assets/projects/...` folder, then update the relevant `<article class="project">` in `index.html`.
+- Keep media in the project-specific directory so technical files cannot be accidentally reused in the wrong project.
+- The verified LinkedIn URL is `linkedin.com/in/heng-li-chua`.
 
 ## Re-deploying after edits
 
-Simplest: edit the file(s), then re-upload via the GitHub web UI (Add file → Upload files), or `git add -A && git commit -m "update" && git push`. Pages picks up changes in ~1 minute.
+```bash
+git add -A
+git commit -m "Describe the update"
+git push
+```
+
+GitHub Pages normally updates within about a minute.
+
+## Validation
+
+Before publishing a substantial edit:
+
+1. Check HTML tag balance.
+2. Check every `assets/...` reference exists.
+3. Serve the folder locally with `python3 -m http.server` and request the index plus every referenced asset.
+4. Inspect the public page for image crops, video playback and accidental private information.
+
+See `DEPLOY-GITHUB.md` for the first-time GitHub Pages setup.
+
+## Source coverage still worth reviewing later
+
+The workspace contains additional material that is not yet represented as public site content, including detailed AMR test videos, the full antenna macro set, global-programme documents and further finance-research artifacts. Add these only after checking accuracy, privacy and whether they strengthen the intended engineering profile.
