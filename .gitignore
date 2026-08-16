@@ -1,0 +1,19 @@
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+
+# --- Editor / tooling ---
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# --- Local logs / drafts ---
+*.log
+
+# --- Private / unpublished ---
+# Put anything you do NOT want on the public site in this folder
+# and it will never be committed. The folder is gitignored entirely.
+/private/
