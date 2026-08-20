@@ -13,17 +13,22 @@ The site is organised around three clear areas:
 ```
 Portfolio Site/
 ├── index.html                  ← complete self-contained site
+├── ASSET-HARVEST-MANIFEST.md   ← full-workspace harvest log (2026-08-20)
 ├── assets/
 │   ├── portfolio-deck.pdf
 │   ├── projects/
 │   │   ├── engineering/
-│   │   │   ├── alleviate/     ← kinematics + Monte Carlo outputs
-│   │   │   ├── amr/           ← Falali media, diagrams, PCB and PDR files
-│   │   │   ├── antenna/       ← S11 result
+│   │   │   ├── alleviate/     ← kinematics + Monte Carlo + interactive models + milestone decks
+│   │   │   ├── amr/           ← Falali media, diagrams, firmware, PCB and PDR files
+│   │   │   ├── antenna/       ← S11 + EM-1D deliverables + CST automation scripts
+│   │   │   ├── c-bracket/     ← CAD → 3D print → tensile test package
 │   │   │   ├── ml/            ← CaDDE ML report + SEM sample
-│   │   │   └── modelling/     ← parachute experiment report + cover
-│   │   └── finance/           ← sample-data tracker preview only
-│   └── recognition/           ← award certificates
+│   │   │   ├── modelling/     ← parachute experiment report + cover
+│   │   │   └── underwater-comms/ ← technical presentation + script-generated diagrams
+│   │   ├── finance/           ← sample-data tracker preview only
+│   │   └── global/            ← GEO Mahidol case study + charts
+│   └── recognition/           ← award certificates (4)
+├── private/                   ← gitignored; people-photos + anything not for the public site
 ├── DEPLOY-GITHUB.md
 ├── SITE-README.md
 └── .gitignore
@@ -40,11 +45,16 @@ Portfolio Site/
 
 - The opening is deliberately direct: name, degree, specialisation, minor and working areas. It does not use a broad slogan.
 - **Falali — One AMR Fits All** is the team project title. The site separately identifies the arm-subsystem PCB, electronics and firmware contributions.
-- **Alleviate** uses the two verified technical outputs available in the workspace. No unsupported prototype photography was added.
+- **Alleviate** uses the two verified technical outputs available in the workspace (Monte Carlo + kinematics) plus the interactive HTML models and compressed milestone decks; the "Heng Li Present Portion" deck is linked separately so the site never over-claims ownership.
 - **Origaminah** includes the additional battery, wiring, motion-sensor and structure visuals found in the DTI workspace.
 - **Parametric Computational Design** was removed at the user's request.
 - The previous KiCad wheel schematic was removed from the CaDDE and finance projects; it belonged to the AMR work.
 - The finance section uses an illustrative dashboard image only. It does not publish live account data or holdings.
+- **C-Bracket Reimagined** and **Underwater Wireless Communications** were added from the Aug-2026 full-workspace harvest; every claim traces to files now in `assets/`.
+- **CodeChamps 2024** appears in the Recognition grid explicitly labelled "Certificate of participation" — it is participation, not a prize, and is not presented as an award.
+- **GEO Mahidol** appears as a leadership/programmes timeline entry with the case-study PDF linked; acceptance-level claims about the Waterloo GEXP offer are deliberately not published until the user confirms.
+- **People-photos** (KL trip, EM-prof, FabLab, group shots) are staged in gitignored `private/` and are not on the public site — they await the user's explicit approval.
+- Full provenance of every staged or excluded file: see `ASSET-HARVEST-MANIFEST.md`.
 
 ## Editing tips
 
@@ -75,4 +85,10 @@ See `DEPLOY-GITHUB.md` for the first-time GitHub Pages setup.
 
 ## Source coverage still worth reviewing later
 
-The workspace contains additional material that is not yet represented as public site content, including detailed AMR test videos, the full antenna macro set, global-programme documents and further finance-research artifacts. Add these only after checking accuracy, privacy and whether they strengthen the intended engineering profile.
+The August 2026 full-workspace harvest is logged in `ASSET-HARVEST-MANIFEST.md`. Public-safe
+engineering and recognition assets are now on the site. Still deliberately held back pending
+your call: people-photos (`private/`), the Waterloo GEXP offer letter (acceptance
+unconfirmed), scanned JC/O/A-level certs, creative/fashion material (Sartorial Samsara,
+Mimpikita), Term 1–3 coursework decks, and the DES teaching-role evidence (role title
+pending confirmation). Add any of these only after checking accuracy, privacy and whether
+they strengthen the intended engineering profile.

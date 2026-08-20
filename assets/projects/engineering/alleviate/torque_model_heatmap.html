@@ -1,0 +1,143 @@
+
+<div style="padding: 1rem 0;">
+  <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 4px;">Model 2 — torque model</p>
+  <p style="font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 1.5rem;">Required motor torque across user weight and friction coefficient</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
+
+    <div>
+      <div style="display: flex; gap: 12px; margin-bottom: 1rem; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-secondary);">
+          <span style="width: 12px; height: 12px; background: #1D9E75; display: inline-block; border-radius: 2px;"></span> Safe zone
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-secondary);">
+          <span style="width: 12px; height: 12px; background: #EF9F27; display: inline-block; border-radius: 2px;"></span> Margin zone
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-secondary);">
+          <span style="width: 12px; height: 12px; background: #E24B4A; display: inline-block; border-radius: 2px;"></span> Exceeds motor rating
+        </div>
+      </div>
+
+      <div style="position: relative; width: 100%; height: 280px;">
+        <canvas id="heatChart"></canvas>
+      </div>
+      <p style="font-size: 11px; color: var(--color-text-secondary); margin: 6px 0 0; text-align: center;">T = μ · m · g · (d/2) · safety factor (×2)</p>
+    </div>
+
+    <div>
+      <p style="font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 0.75rem;">Motor specification derivation</p>
+
+      <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 0.75rem; margin-bottom: 0.75rem; font-size: 12px; font-family: var(--font-mono); color: var(--color-text-primary); line-height: 1.9;">
+        Worst case: m = 100 kg, μ = 0.20<br>
+        F_friction = 0.20 × 100 × 9.81 = 196 N<br>
+        r_shaft = 0.0125 m<br>
+        T_required = 196 × 0.0125 = 2.45 Nm<br>
+        <span style="color: #D85A30; font-weight: 500;">Safety factor ×2 → T_design = 4.90 Nm</span>
+      </div>
+
+      <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.75rem 1rem; margin-bottom: 0.75rem;">
+        <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 2px;">Selected motor torque</p>
+        <p style="font-size: 20px; font-weight: 500; color: var(--color-text-primary); margin: 0;">≥ 5.0 Nm</p>
+      </div>
+
+      <div style="font-size: 12px; color: var(--color-text-secondary); line-height: 1.7;">
+        <p style="margin: 0 0 4px; font-weight: 500; color: var(--color-text-primary);">Covers the majority of users:</p>
+        Singapore elderly avg weight ~55–75 kg<br>
+        μ for nursing slide sheet ≈ 0.05–0.12<br>
+        Motor at 5 Nm handles up to 100 kg at μ = 0.25 before safety factor is breached
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.25rem; padding: 0.75rem 1rem; border-left: 3px solid #378ADD; background: var(--color-background-secondary); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;">
+    <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0;"><span style="font-weight: 500; color: var(--color-text-primary);">Design insight:</span> reducing μ through better mat material has a larger proportional impact on required torque than reducing user weight — mat selection is the highest-leverage design variable.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const weights = [40, 50, 60, 70, 80, 90, 100];
+const frictions = [0.05, 0.08, 0.12, 0.16, 0.20, 0.25];
+const motorRated = 5.0;
+const r = 0.0125;
+const g = 9.81;
+const sf = 2;
+
+const datasets = frictions.map((mu, fi) => {
+  const colors = ['#1D9E75','#1D9E75','#5DCAA5','#EF9F27','#EF9F27','#E24B4A'];
+  const torques = weights.map(m => +(mu * m * g * r * sf).toFixed(2));
+  return {
+    label: 'μ = ' + mu.toFixed(2),
+    data: torques,
+    backgroundColor: colors[fi] + '33',
+    borderColor: colors[fi],
+    borderWidth: 2,
+    pointRadius: 4,
+    tension: 0.3,
+    fill: false
+  };
+});
+
+new Chart(document.getElementById('heatChart'), {
+  type: 'line',
+  data: {
+    labels: weights.map(w => w + ' kg'),
+    datasets
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false }
+    },
+    scales: {
+      x: {
+        title: { display: true, text: 'User weight (kg)', color: '#888780', font: { size: 12 } },
+        ticks: { color: '#888780', font: { size: 11 } },
+        grid: { color: 'rgba(136,135,128,0.15)' }
+      },
+      y: {
+        title: { display: true, text: 'Required torque (Nm)', color: '#888780', font: { size: 12 } },
+        ticks: { color: '#888780', font: { size: 11 } },
+        grid: { color: 'rgba(136,135,128,0.15)' },
+        min: 0,
+        max: 7
+      }
+    }
+  },
+  plugins: [{
+    afterDraw(chart) {
+      const ctx = chart.ctx;
+      const yScale = chart.scales.y;
+      const xScale = chart.scales.x;
+      const y = yScale.getPixelForValue(motorRated);
+      ctx.save();
+      ctx.setLineDash([6, 4]);
+      ctx.strokeStyle = '#378ADD';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.moveTo(xScale.left, y);
+      ctx.lineTo(xScale.right, y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#378ADD';
+      ctx.font = '500 11px sans-serif';
+      ctx.fillText('Motor rating: 5.0 Nm', xScale.left + 6, y - 6);
+      ctx.restore();
+
+      const frictionLabels = ['μ=0.05','μ=0.08','μ=0.12','μ=0.16','μ=0.20','μ=0.25'];
+      const lineColors = ['#1D9E75','#1D9E75','#5DCAA5','#EF9F27','#EF9F27','#E24B4A'];
+      frictionLabels.forEach((label, i) => {
+        const dataset = chart.data.datasets[i];
+        const lastPoint = dataset.data[dataset.data.length - 1];
+        const yPx = yScale.getPixelForValue(lastPoint);
+        ctx.save();
+        ctx.fillStyle = lineColors[i];
+        ctx.font = '11px sans-serif';
+        ctx.fillText(label, xScale.right + 4, yPx + 4);
+        ctx.restore();
+      });
+    }
+  }]
+});
+</script>
