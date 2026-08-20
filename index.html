@@ -1,50 +1,317 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chua Heng Li — Engineering Portfolio</title>
-<meta name="description" content="Portfolio of Chua Heng Li, an Engineering Product Development student at SUTD specialising in electrical engineering with an AI minor."
->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0e12;--panel:#11161c;--panel2:#151c24;--line:#27303a;--text:#edf2f7;--muted:#9ba8b5;--soft:#687683;--blue:#74b9ff;--green:#75d69a;--orange:#ffad73;--purple:#c1a1ff;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.65}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:auto;padding:0 28px}.mono{font-family:'JetBrains Mono',monospace}.eyebrow{font:600 .72rem 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:13px}.muted{color:var(--muted)}
-nav{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:rgba(11,14,18,.9);backdrop-filter:blur(12px)}.nav{height:62px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:700}.brand span{color:var(--blue);font-family:'JetBrains Mono',monospace}.navlinks{display:flex;gap:24px;font-size:.88rem}.navlinks a{color:var(--muted)}.navlinks a:hover{color:var(--text);text-decoration:none}@media(max-width:760px){.navlinks{display:none}}
-.hero{padding:86px 0 72px;border-bottom:1px solid var(--line);background:radial-gradient(900px 420px at 72% -12%,rgba(116,185,255,.1),transparent 65%)}.hero h1{max-width:850px;margin:0;font-size:clamp(2.4rem,6vw,4.75rem);line-height:1.03;letter-spacing:-.065em}.hero .summary{max-width:780px;margin:24px 0 0;color:var(--muted);font-size:1.14rem}.hero .summary b{color:var(--text)}.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 13px;background:rgba(17,22,28,.78);font-size:.84rem;color:var(--text)}.pill strong{color:var(--blue)}
-.stats{border-bottom:1px solid var(--line);background:#0d1116}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px}.stat{padding:25px 20px;border-left:1px solid var(--line)}.stat:first-child{border-left:0}.stat .n{font-size:1.25rem;font-weight:700;color:var(--blue)}.stat .l{font-size:.84rem;color:var(--muted);margin-top:3px}.stat .s{font-size:.72rem;color:var(--soft)}@media(max-width:720px){.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--line)}}
-section{padding:82px 0;scroll-margin-top:65px}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}.section-head h2{margin:0;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.05em;line-height:1.1}.section-head p{max-width:510px;margin:0;color:var(--muted)}
-.project-section{border-top:1px solid var(--line)}.project-list{display:grid;gap:28px}.project{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}.project:nth-child(even){grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr)}.project:nth-child(even) .project-media{order:2}.project-media{min-height:330px;background:#0d1218;border-right:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden}.project:nth-child(even) .project-media{border-right:0;border-left:1px solid var(--line)}.project-media.single{display:block}.project-media img,.project-media video{width:100%;height:100%;object-fit:cover;display:block;background:#0d1218}.project-media.contain img{object-fit:contain;padding:20px}.project-media .wide{grid-column:span 2}.project-body{padding:31px 32px 32px}.project-title{display:flex;justify-content:space-between;gap:14px;align-items:start}.project h3{font-size:1.5rem;line-height:1.2;letter-spacing:-.03em;margin:0}.project .date{font:400 .7rem 'JetBrains Mono',monospace;color:var(--soft);white-space:nowrap}.project .context{margin:8px 0 0;color:var(--blue);font-size:.82rem;font-weight:600}.project .desc{color:var(--muted);font-size:.96rem;margin:17px 0 0}.project ul{list-style:none;padding:0;margin:19px 0 0;display:grid;gap:9px}.project li{position:relative;padding-left:18px;color:var(--muted);font-size:.89rem}.project li:before{content:'—';position:absolute;left:0;color:var(--blue)}.project li b{color:var(--text)}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}.tag{font:400 .68rem 'JetBrains Mono',monospace;color:var(--green);border:1px solid rgba(117,214,154,.25);background:rgba(117,214,154,.07);padding:3px 8px;border-radius:5px}.tag.orange{color:var(--orange);border-color:rgba(255,173,115,.25);background:rgba(255,173,115,.07)}.tag.purple{color:var(--purple);border-color:rgba(193,161,255,.25);background:rgba(193,161,255,.07)}.project-links{display:flex;flex-wrap:wrap;gap:15px;margin-top:20px;font-size:.82rem}.project-links a:after{content:' ↗';font-size:.75em}.caption{font-size:.72rem;color:var(--soft);margin:13px 0 0}@media(max-width:850px){.project,.project:nth-child(even){display:block}.project-media,.project:nth-child(even) .project-media{min-height:260px;border:0;border-bottom:1px solid var(--line);order:0}.project-body{padding:25px}.project-title{display:block}.project .date{display:block;margin-top:8px}}
-.subsection{margin-top:60px}.subsection h3{font-size:1.15rem;margin:0 0 18px}.method-grid,.skills,.recognition{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.box,.skill{border:1px solid var(--line);background:var(--panel);border-radius:13px;padding:23px}.box h3,.skill h3{margin:0;font-size:1rem}.box p,.skill p{color:var(--muted);font-size:.88rem;margin:9px 0 0}.method-grid .step{font:600 .75rem 'JetBrains Mono',monospace;color:var(--blue)}
-.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:23px}.timeline{border-left:1px solid var(--line);padding-left:24px;margin:22px 0 0}.timeline-item{position:relative;margin:0 0 26px}.timeline-item:last-child{margin-bottom:0}.timeline-item:before{content:'';position:absolute;width:9px;height:9px;border-radius:50%;background:var(--blue);left:-29px;top:8px;box-shadow:0 0 0 4px rgba(116,185,255,.12)}.timeline-item h3{font-size:1rem;margin:0}.timeline-item .where{color:var(--blue);font-size:.82rem;font-weight:600}.timeline-item .when{float:right;color:var(--soft);font:400 .7rem 'JetBrains Mono',monospace}.timeline-item p{color:var(--muted);font-size:.86rem;margin:6px 0 0}.recognition{grid-template-columns:repeat(3,1fr)}.recognition .box{padding:21px}.recognition p{margin-bottom:14px}@media(max-width:850px){.two-col,.method-grid,.skills,.recognition{grid-template-columns:1fr 1fr}}@media(max-width:520px){.two-col,.method-grid,.skills,.recognition{grid-template-columns:1fr}}
-footer{border-top:1px solid var(--line);padding:42px 0 55px;background:#0d1116}.footer-row{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-row p{color:var(--muted);font-size:.86rem;margin:0}.footer-links{display:flex;gap:18px;font-size:.86rem}.small{font-size:.74rem;color:var(--soft);margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
+:root{
+  --bg:#0b0e11; --panel:#13181d; --panel-2:#182027; --fg:#edf2f6;
+  --muted:#aeb8c2; --line:#2a343d; --accent:#a9c9e8; --max:1120px;
+}
+*,*::before,*::after{box-sizing:border-box;font-family:Arial}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(11,14,17,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between;font-size:16px}
+.nav .name{color:var(--fg);font-weight:600}
+.nav .links{display:flex;gap:28px}
+.nav .links a{color:var(--muted)}
+.nav .links a:hover{color:var(--fg);text-decoration:none}
+@media(max-width:700px){.nav .links{display:none}}
+
+.hero{padding:88px 0 72px;max-width:none;text-align:center}
+.hero h1{margin:0;font-size:48px;line-height:1.1;font-weight:600;letter-spacing:-.02em}
+.hero p{margin:22px auto 0;color:var(--muted);max-width:850px;font-size:18px;line-height:1.7}
+.hero-skills{display:table;margin:26px auto 0}
+.hero-skills .hs{display:table-row}
+.hero-skills .hs-k{display:table-cell;padding-right:18px;color:var(--muted);font-size:13px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.hero-skills .hs-v{display:table-cell;color:var(--fg);font-size:15px;white-space:nowrap}
+.hero-contact{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero-contact .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid #3a4854;border-radius:6px;color:var(--fg);background:rgba(169,201,232,.05);font-size:15px;font-weight:600}
+.hero-contact .btn svg{width:16px;height:16px;flex:none;fill:currentColor}
+.hero-contact .btn:hover{border-color:#5a6b7d;background:rgba(169,201,232,.12);text-decoration:none}
+.hero-contact .btn--resume{border-color:rgba(169,201,232,.45);background:rgba(169,201,232,.10)}
+@media(max-width:700px){.hero{padding:64px 0 52px}.hero h1{font-size:36px}.hero p{font-size:16px}.hero-skills{display:block}.hero-skills .hs{display:block}.hero-skills .hs-k,.hero-skills .hs-v{display:inline;padding:0}.hero-skills .hs-v{white-space:normal}}
+
+section{padding:62px 0;border-top:1px solid var(--line)}
+.sec-title{font-size:21px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg);margin:0 0 26px;font-weight:600}
+
+.project{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:34px;padding:28px;margin:0 0 24px;background:linear-gradient(135deg,var(--panel),#101519);border:1px solid var(--line);border-radius:14px}
+.project:last-of-type{margin-bottom:0}
+.project-media{min-width:0}
+.project-media>a:first-child{display:block}
+.project-media img,.project-media video{display:block;width:100%;height:300px;object-fit:cover;border:1px solid var(--line);border-radius:9px;background:#0e1215}
+.project-media video{object-fit:contain}
+.media-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.media-strip a{display:block}
+.media-strip img{height:84px;border-radius:6px}
+.project-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.p-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.p-title h3{margin:0;font-size:24px;line-height:1.25;font-weight:600}
+.p-title .date{color:var(--muted);font-size:14px;font-weight:400}
+.p-context{color:var(--accent);font-size:16px;margin:10px 0 0}
+.p-desc{margin:16px 0 0;color:var(--muted);font-size:18px;line-height:1.7}
+.p-links{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.p-links a{padding:8px 12px;border:1px solid #3a4854;border-radius:6px;font-size:16px;background:rgba(169,201,232,.05)}
+.p-links a:hover{background:rgba(169,201,232,.12);text-decoration:none}
+.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.project-tags span{color:var(--muted);font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:999px}
+.project--text{grid-template-columns:1fr}
+.project--text .project-copy{max-width:820px}
+
+.ex{margin-bottom:22px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ex:last-of-type{border-bottom:0}
+.ex .ex-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.ex .ex-title h3{margin:0;font-size:18px;font-weight:600}
+.ex .ex-title .when{color:var(--muted);font-size:14px}
+.ex .where{color:var(--muted);font-size:16px;margin-top:5px}
+.ex p{color:var(--muted);font-size:16px;margin:7px 0 0;max-width:760px}
+.recog{display:flex;gap:10px 20px;font-size:16px;color:var(--muted);flex-wrap:wrap}
+.recog span{padding:8px 12px;border:1px solid var(--line);border-radius:6px}
+.recog b{font-weight:600;color:var(--fg)}
+@media(max-width:800px){.wrap{padding:0 22px}.project{grid-template-columns:1fr;padding:22px;gap:24px}.project-media img,.project-media video{height:260px}.p-desc{font-size:16px}}
+@media(max-width:520px){.hero h1{font-size:36px}.project-media img,.project-media video{height:220px}.media-strip img{height:70px}.p-title h3{font-size:24px}}
 </style>
 </head>
 <body>
-<nav><div class="wrap nav"><div class="brand">Chua Heng Li<span>.portfolio</span></div><div class="navlinks"><a href="#engineering">Engineering</a><a href="#finance">Python &amp; Finance</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></div></nav>
-<header class="hero"><div class="wrap"><div class="eyebrow">Engineering Product Development · SUTD</div><h1>Chua Heng Li</h1><p class="summary">I am an <b>Engineering Product Development student at SUTD</b>, specialising in electrical engineering with an AI minor. My work focuses on <b>embedded firmware, electronics prototyping, PCB design, Python automation and equity research</b>.</p><div class="hero-meta"><span class="pill"><strong>Education</strong> EPD · Electrical Engineering · AI minor</span><span class="pill"><strong>Embedded</strong> ESP32-S3 · Arduino · C/C++</span><span class="pill"><strong>Electronics</strong> KiCad · sensors · motor control</span><span class="pill"><strong>Data</strong> Python · SQLite · Streamlit</span><span class="pill"><strong>Research</strong> Equity research · quantitative analysis</span></div></div></header>
-<div class="stats"><div class="wrap stats-grid"><div class="stat"><div class="n">4.2/5.0</div><div class="l">SUTD cGPA</div><div class="s">Engineering Product Development</div></div><div class="stat"><div class="n">1st Prize</div><div class="l">SEMI Tech Zoomers 2026</div><div class="s">Southeast Asia competition</div></div><div class="stat"><div class="n">8</div><div class="l">Engineering projects</div><div class="s">Embedded · electronics · analysis</div></div><div class="stat"><div class="n">Python + C/C++</div><div class="l">Programming</div><div class="s">Automation, models and firmware</div></div></div></div>
-<main>
-<section id="engineering" class="project-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">01 · Engineering projects</div><h2>Electrical, embedded and engineering analysis work.</h2></div><p>These projects show the parts of engineering I have worked on directly: defining interfaces, building prototypes, writing control logic, modelling systems and validating behaviour.</p></div>
-<div class="project-list">
-<article class="project"><div class="project-media"><img class="wide" src="assets/projects/engineering/amr/final-prototype.jpg" alt="Falali autonomous mobile robot prototype"><img src="assets/projects/engineering/amr/arm-schematic.png" alt="Falali arm subsystem schematic"><img src="assets/projects/engineering/amr/laser-cutting.jpg" alt="Laser cutting the Falali robot enclosure"></div><div class="project-body"><div class="project-title"><h3>Falali — One AMR Fits All</h3><span class="date">30.007 EDI · 2026</span></div><div class="context">Autonomous mobile robot · arm electronics · embedded control</div><p class="desc">A team project developing an autonomous mobile robot prototype for textile-manufacturing trolley transport. Falali is designed to drive underneath a trolley, deploy side-gripping arms and secure the load without modifying the trolley. The implemented work covers autonomous arm/clamp sequencing and safety interlocks; fully autonomous trolley finding and navigation remained future work. The portfolio focuses on my arm-subsystem work and available prototype validation rather than claiming a finished production system.</p><ul><li><b>My contribution:</b> designed the arm-subsystem PCB in KiCad, from schematic and interfaces through layout and fabrication outputs.</li><li>Prototyped and tested the ESP32-S3, VL53L0X ToF sensors, servo flippers, limit switches and external BTS7960 motor interfaces.</li><li>Developed PlatformIO/Arduino C++ firmware with XSHUT sequencing for four ToF sensors, PCA9685 servo control, homing, hard-stop protection, timeouts, emergency stop and serial diagnostics.</li><li>Implemented the arm state machine: Homing → Extending → Pre-flip → Flipping → Retracting → Stopped, with a clamp/release sequence.</li><li>The PDR specified a ≤200 mm height target, ≥300 N holding-force target and ≥100 kg trolley-plus-load target; the reported prototype assessment lists 167 mm AMR height, while the workspace inventory records approximately 70 kg demonstrated in the available media/evidence.</li></ul><div class="tags"><span class="tag orange">ESP32-S3</span><span class="tag orange">C++ / PlatformIO</span><span class="tag orange">KiCad PCB</span><span class="tag orange">VL53L0X</span><span class="tag orange">PCA9685</span><span class="tag orange">BTS7960</span><span class="tag">State machine</span></div><div class="project-links"><a href="assets/projects/engineering/amr/pdr.pdf" target="_blank">PDR document</a><a href="assets/projects/engineering/amr/arm-schematic.pdf" target="_blank">Arm schematic</a><a href="assets/projects/engineering/amr/arm-pcb-layout.pdf" target="_blank">PCB layout</a><a href="assets/projects/engineering/amr/arm-subsystem-demo.mov" target="_blank">Arm demo</a><a href="assets/projects/engineering/amr/wheel-drive-demo.mp4" target="_blank">Wheel drive test</a><a href="assets/projects/engineering/amr/rail-strength-test.mp4" target="_blank">Rail strength test</a><a href="assets/projects/engineering/amr/clamped-demo.mp4" target="_blank">Clamping demo</a><a href="assets/projects/engineering/amr/firmware-source.zip" target="_blank">Firmware source</a><a href="assets/projects/engineering/amr/pcb/wheel-drive-schematic.pdf" target="_blank">Wheel-drive PCB</a><a href="assets/projects/engineering/amr/pcb/pdb-master-document.pdf" target="_blank">Power distribution</a><a href="assets/projects/engineering/amr/system-flow.svg" target="_blank">System flow diagram</a><a href="assets/projects/engineering/amr/arm-subsystem-diagram.svg" target="_blank">Arm subsystem diagram</a></div></div></article>
-<article class="project"><div class="project-media"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Monte Carlo required motor torque output for Alleviate"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Kinematics shaft rotation and carriage displacement model"></div><div class="project-body"><div class="project-title"><h3>Alleviate — Sit-to-Stand Bed Assist</h3><span class="date">Engineering for Good · 2026</span></div><div class="context">CaDDE analysis · kinematics · motor sizing</div><p class="desc">A five-person ST Engineering for Good project developing a modular bed add-on to help elderly users move from lying to standing. The available project files document the Computational and Data-Driven Engineering analysis for the motor subsystem and identify Heng Li as the presenter for the relevant milestone portion; the site does not assign an unsupported sole-owner claim.</p><ul><li>Modelled the relationship between shaft rotation and carriage displacement for the assist mechanism.</li><li>Ran a <b>1,000,000-simulation Monte Carlo model</b> over user mass and friction assumptions using normal and log-normal distributions.</li><li>The project analysis reports that 95% of users require less than approximately <b>1.02 Nm</b> per motor, with a 2× safety factor giving a 2.04 Nm total dual-motor operating requirement.</li><li>Connected the analysis to the system design: Arduino control, motor drivers, limit switches, emergency stop and 3D-printed rails.</li></ul><div class="tags"><span class="tag">Python</span><span class="tag">Monte Carlo</span><span class="tag">Kinematics</span><span class="tag orange">Motor sizing</span><span class="tag orange">Arduino</span></div><div class="project-links"><a href="assets/projects/engineering/alleviate/monte-carlo-torque.png" target="_blank">Monte Carlo output</a><a href="assets/projects/engineering/alleviate/kinematics-displacement.png" target="_blank">Kinematics output</a><a href="assets/projects/engineering/alleviate/kinematic_model_carriage_displacement.html" target="_blank">Interactive model — carriage</a><a href="assets/projects/engineering/alleviate/torque_model_heatmap.html" target="_blank">Interactive model — torque</a><a href="assets/projects/engineering/alleviate/milestones/milestone-1.pdf" target="_blank">Milestone 1 deck</a><a href="assets/projects/engineering/alleviate/milestones/milestone-2.pdf" target="_blank">Milestone 2 deck</a><a href="assets/projects/engineering/alleviate/milestones/milestone-2-hengli-portion.pdf" target="_blank">My presentation portion</a></div><p class="caption">The workspace contains two strong technical outputs for this project; I have not added unsupported prototype photography. The milestone decks document the team concept and include the sections I presented.</p></div></article>
-<article class="project"><div class="project-media"><img src="assets/projects/engineering/bird-deterrent/main-structure.png" alt="Origaminah bird-deterrent main structure"><img src="assets/projects/engineering/bird-deterrent/circuit-side-view.png" alt="Origaminah circuit-side design"><img src="assets/projects/engineering/bird-deterrent/wire-trunking.png" alt="Origaminah wire trunking design"><img src="assets/projects/engineering/bird-deterrent/motion-sensor.png" alt="Origaminah motion sensor design"><img src="assets/projects/engineering/bird-deterrent/battery.png" alt="Origaminah battery design"></div><div class="project-body"><div class="project-title"><h3>Origaminah — Bird Deterrence System</h3><span class="date">Design Thinking &amp; Innovation · 2025</span></div><div class="context">Product design · Arduino · motion sensing · sustainable prototyping</div><p class="desc">A five-person team project for bird interference in a semi-outdoor SUTD canteen. Origaminah combines a deployable origami/reflective mechanism with motion-triggered electronics to deter birds while considering user comfort, safety and sustainability.</p><ul><li>The portfolio evidence covers the electrical and subsystem design: Arduino Nano, PIR motion sensing, battery, wiring trunking and the interface to the actuation mechanism.</li><li>The team’s DTP documentation describes two PIR sensors detecting motion and triggering the Arduino to command servo-driven movement.</li><li>Design exploration used the Real-Win-Worth framework and considered UV light, reflective movement, water spray and an opening flower-origami concept before converging on the final system direction.</li><li>The team received the <b>Sustainability Practice Prize — Prototype Dismantling Drive</b> for the project.</li></ul><div class="tags"><span class="tag orange">Arduino Nano</span><span class="tag orange">PIR sensors</span><span class="tag orange">Servos</span><span class="tag orange">Battery and wiring</span><span class="tag purple">Product design</span><span class="tag">Sustainability</span></div><div class="project-links"><a href="assets/recognition/dti-sustainability-prize.pdf" target="_blank">Award certificate</a></div></div></article>
-<article class="project"><div class="project-media"><img src="assets/projects/engineering/antenna/s11-return-loss.png" alt="S11 return loss plot for a flexible antenna"><img src="assets/projects/engineering/antenna/em1d/zwave-geometry-preview.png" alt="Z-wave liquid-metal antenna geometry preview"><img src="assets/projects/engineering/antenna/em1d/strain-zwave-vs-flat.png" alt="Strain response of z-wave design versus flat control"></div><div class="project-body"><div class="project-title"><h3>Flexible 2.45 GHz Antenna</h3><span class="date">Electromagnetics &amp; Apps · 2026</span></div><div class="context">Electrical engineering · CST simulation · automated design tools</div><p class="desc">A flexible antenna study for the 2.45 GHz ISM band. The work covered a concentric-circle antenna and an EGaIn liquid-metal dipole on kinesiology tape for strain-tolerant wireless applications, and built the tooling that designs them.</p><ul><li>Simulated S11, VSWR, radiation and total efficiency, farfield directivity and gain in CST Studio Suite.</li><li>Created parametric CST VBA macros to speed up geometry iteration and compare design variants.</li><li>Built a browser-based antenna-synthesis tool (EM-1D) that turns design requirements into CST VBA export, with a Three.js 3D viewer and Node unit tests on a DOM-free physics engine.</li><li>Wrote a Python package that drives CST Studio from Python with a Streamlit UI and its own unit tests.</li><li>The full-wave simulation work reports resonant-drift comparison under strain for the EGaIn dipole against a flat control; the z-wave strain-tolerant variant reduces resonant drift by about 25% at 20% strain versus the flat control.</li></ul><div class="tags"><span class="tag purple">CST Studio Suite</span><span class="tag purple">Python automation</span><span class="tag purple">VBA macros</span><span class="tag">EM simulation</span><span class="tag">Antenna design</span><span class="tag">Node.js</span></div><div class="project-links"><a href="assets/projects/engineering/antenna/s11-return-loss.png" target="_blank">S11 result</a><a href="assets/projects/engineering/antenna/em1d/strain-zwave-vs-flat.png" target="_blank">Strain comparison</a><a href="assets/projects/engineering/antenna/em1d/sdd11-final.png" target="_blank">Z-wave final S-param</a><a href="assets/projects/engineering/antenna/em1d/zwave-mould-preview.png" target="_blank">Z-wave mould preview</a><a href="assets/projects/engineering/antenna/cst-automation/main.py" target="_blank">Python CST driver</a><a href="assets/projects/engineering/antenna/cst-automation/tests/test_cst_controller.py" target="_blank">CST automation tests</a></div></div></article>
-<article class="project"><div class="project-media"><img src="assets/projects/engineering/c-bracket/01_BaselinePrints.jpeg" alt="3D-printed C-bracket baseline print"><img src="assets/projects/engineering/c-bracket/03_BaselinePrint01_Broken.jpeg" alt="C-bracket print after tensile failure"></div><div class="project-body"><div class="project-title"><h3>C-Bracket Reimagined — Design-to-Test</h3><span class="date">Structures &amp; Materials · 2026</span></div><div class="context">CAD · 3D printing · tensile testing · design iteration</div><p class="desc">A Structures &amp; Materials 1D project taking a load-bearing C-bracket from my own CAD through 3D printing to tensile testing and failure analysis — the full design-print-validate loop. My part carries my name in the file set.</p><ul><li>Modelled the bracket in my own CAD files and printed baseline parts.</li><li>Tested the printed parts to failure on a tensile rig and analysed the failure modes.</li><li>Documented the design rationale, results and iteration in a group report.</li></ul><div class="tags"><span class="tag orange">CAD</span><span class="tag orange">3D printing</span><span class="tag">Tensile testing</span><span class="tag">Failure analysis</span><span class="tag">Design iteration</span></div><div class="project-links"><a href="assets/projects/engineering/c-bracket/c-bracket-heng-li.stl" target="_blank">CAD part (STL)</a><a href="assets/projects/engineering/c-bracket/c-bracket-heng-li.step" target="_blank">CAD part (STEP)</a><a href="assets/projects/engineering/c-bracket/c-bracket-design-report.docx" target="_blank">Design report</a><a href="assets/projects/engineering/c-bracket/2026_CP02Group03_1.is_tens.pdf" target="_blank">Tensile result</a></div></div></article>
-<article class="project"><div class="project-media"><img src="assets/projects/engineering/underwater-comms/rf_skin_depth.png" alt="RF skin depth comparison diagram for underwater communications"><img src="assets/projects/engineering/underwater-comms/comparison_table.png" alt="Comparison table of underwater communication methods"></div><div class="project-body"><div class="project-title"><h3>Underwater Wireless Communications</h3><span class="date">Electromagnetics &amp; Apps · technical presentation · 2026</span></div><div class="context">Technical communication · RF · acoustics · optics</div><p class="desc">A student technical presentation comparing underwater wireless communication approaches — acoustic, optical, RF and magnetic induction — with speaker notes and diagrams I generated from the underlying physics with scripts.</p><ul><li>Built a seven-slide deck comparing attenuation, bandwidth and range trade-offs across acoustic, optical and RF/MI links.</li><li>Generated every figure with matplotlib scripts so the diagrams are reproducible from the physics, not copied.</li><li>Documented the deep-dive notes that informed the talk.</li></ul><div class="tags"><span class="tag purple">RF engineering</span><span class="tag purple">Acoustics</span><span class="tag">Technical communication</span><span class="tag">Python</span></div><div class="project-links"><a href="assets/projects/engineering/underwater-comms/Underwater_Communications.pptx" target="_blank">Presentation deck</a><a href="assets/projects/engineering/underwater-comms/Underwater_Communications.html" target="_blank">HTML version</a><a href="assets/projects/engineering/underwater-comms/rf_skin_depth.png" target="_blank">Skin-depth diagram</a><a href="assets/projects/engineering/underwater-comms/comparison_table.png" target="_blank">Comparison table</a></div></div></article>
-<article class="project"><div class="project-media single"><img src="assets/projects/engineering/ml/battery-sem-sample.jpg" alt="Battery SEM image classification sample"></div><div class="project-body"><div class="project-title"><h3>Engineering Machine Learning</h3><span class="date">CaDDE · individual project · 2026</span></div><div class="context">Machine learning for engineering · modelling · validation</div><p class="desc">An individual project applying machine learning and deep learning to engineering problems: electrochemical-stress regression, engine-pump anomaly detection and battery SEM image classification.</p><ul><li>Compared a Ridge baseline with XGBoost for electrochemical stress, using feature relationships and cross-validation to guide model selection.</li><li>Considered false-negative risk, noisy sensors and drift for an engine-pump anomaly-detection deployment.</li><li>Used transfer learning for battery SEM texture classification; differential learning rates improved reported five-fold cross-validation accuracy from about 0.72 to about 0.88.</li><li>Connected model behaviour to physics and failure modes instead of treating ML as a black box.</li></ul><div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Cross-validation</span><span class="tag purple">Computer vision</span><span class="tag orange">Engineering ML</span></div><div class="project-links"><a href="assets/projects/engineering/ml/individual-report.docx" target="_blank">Individual report</a></div><article class="project"><div class="project-media single"><img src="assets/projects/engineering/modelling/parachute-cover.jpg" alt="Parachute drop modelling project cover"></div><div class="project-body"><div class="project-title"><h3>Parachute Drop Modelling</h3><span class="date">Modelling · 2024</span></div><div class="context">Experimental data · regression · calculus optimisation</div><p class="desc">A team data-analysis project connecting physical measurements to a mathematical model of parachute terminal velocity and drag.</p><ul><li>Collected accelerometer streams from parachute drops at multiple heights and orientations.</li><li>Used Excel-based analysis and linear regression to relate parachute area and mass; the project data reports an R² of 0.995.</li><li>Used calculus and an error-function objective to estimate the drag coefficient and compare the model against observations.</li></ul><div class="tags"><span class="tag">Experimental data</span><span class="tag">Excel</span><span class="tag">Regression</span><span class="tag">Calculus</span></div><div class="project-links"><a href="assets/projects/engineering/modelling/parachute-study.pdf" target="_blank">Project report</a></div></div></article>
-</div></article>
-</div></div></section>
-<section id="finance" class="project-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">02 · Python, data &amp; equity research</div><h2>Automation and research as structured projects.</h2></div><p>This section separates the finance work from the engineering projects. The tracker is a software/data system; the research program is a repeatable analytical workflow. Live holdings and account data remain private.</p></div>
-<div class="project-list"><article class="project"><div class="project-media single"><img src="assets/projects/finance/tracker-sample-preview.png" alt="Illustrative sample-data preview of the portfolio analytics dashboard"></div><div class="project-body"><div class="project-title"><h3>Portfolio Tracker &amp; Analyzer</h3><span class="date">Personal project · 2025–present</span></div><div class="context">Python data engineering · SQLite · Streamlit · Plotly</div><p class="desc">An end-to-end data system that retrieves Moomoo OpenD account data, cleans it, stores daily history in SQLite and presents an interactive Streamlit dashboard. Real account figures are not published; this image uses sample data.</p><ul><li>Built the pipeline from API retrieval and cleaning through portfolio snapshots, benchmark history and transaction records.</li><li>Implemented inception-anchored Time-Weighted Return, external-capital versus dividend/coupon classification, realized P/L snapshots and multiplier-aware trade audit records.</li><li>Built dashboard views for overview, positions, P/L by market and trade ledger, with Plotly visualisation and automated refresh.</li><li>Added pytest coverage for the core return, income, transaction and P/L calculations; credentials stay outside the project tree.</li></ul><div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">SQLite</span><span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">pytest</span></div><div class="project-links"><a href="https://github.com/chuahengli/Stock-Portfolio-project" target="_blank" rel="noopener">GitHub repository</a><a href="assets/projects/finance/tracker-sample-preview.png" target="_blank">Sample dashboard</a></div></div></article>
-<article class="project"><div class="project-media single contain"><div style="height:100%;display:grid;place-items:center;padding:35px;color:var(--blue);font:600 1rem 'JetBrains Mono',monospace;text-align:center">RESEARCH<br>PROGRAM<br><span style="color:var(--green);font-size:.75rem">DATA → THESIS → VALUATION → SYNTHESIS</span></div></div><div class="project-body"><div class="project-title"><h3>Equity Research Program</h3><span class="date">Ongoing personal project</span></div><div class="context">Python automation · financial modelling · quantitative analysis</div><p class="desc">A structured, ongoing research program covering AI infrastructure, semiconductors, fintech, memory, power electronics, space connectivity, defence, healthcare and industrial technology.</p><ul><li>Built reusable data workflows that pull multi-market financial data, clean and normalise it, store structured JSON and generate reports.</li><li>Uses a four-stage process: research brief; asymmetric thesis; valuation and peer comparison; portfolio-level synthesis and correlation.</li><li>Developed scenario models for revenue, free cash flow, EBITDA break-even, valuation and dilution, with forecasts separated into management guidance, analyst consensus and own modelling.</li><li>Computed beta and correlation matrices to examine factor exposure and diversification rather than treating sector labels as sufficient.</li><li>The research is AI-assisted: my methodology, questions and decisions are mine; literature and web scanning are tool-assisted and disclosed as such.</li></ul><div class="tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">JSON data layer</span><span class="tag">Valuation</span><span class="tag purple">Scenario modelling</span><span class="tag purple">Beta / correlation</span></div><div class="project-links"><a href="https://github.com/chuahengli" target="_blank" rel="noopener">GitHub profile</a></div></div></article></div>
-<div class="subsection"><h3>Research method</h3><div class="method-grid"><div class="box"><div class="step">01 · RESEARCH BRIEF</div><p>Define the company, market, competitors and the claims that need evidence.</p></div><div class="box"><div class="step">02 · ASYMMETRIC THESIS</div><p>State what has to be true, what can go wrong and where the market may be mispricing the range of outcomes.</p></div><div class="box"><div class="step">03 · VALUATION &amp; SYNTHESIS</div><p>Compare peers, model scenarios and examine beta, correlation and portfolio fit.</p></div></div></div></div></section>
-<section id="experience" class="project-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">03 · Experience &amp; education</div><h2>Background and involvement.</h2></div><p>My engineering work sits alongside operations experience, student leadership and technical communication.</p></div><div class="two-col"><div class="box"><h3>Education and experience</h3><div class="timeline"><div class="timeline-item"><span class="when">2024–present</span><h3>Engineering Product Development</h3><div class="where">Singapore University of Technology and Design</div><p>Electrical engineering specialisation with AI minor. cGPA 4.2/5.0. Relevant work includes embedded systems, electronics, machine learning, electromagnetics and engineering analysis.</p></div><div class="timeline-item"><span class="when">Mar–Sep 2024</span><h3>Operations Assistant</h3><div class="where">UOB Kay Hian</div><p>Processed and reconciled dividend and corporate-action data across securities and client accounts; audited records across thousands of accounts and resolved discrepancies with the operations team.</p></div></div></div><div class="box"><h3>Leadership and programmes</h3><div class="timeline"><div class="timeline-item"><span class="when">Jan 2025–Jan 2026</span><h3>Vice President</h3><div class="where">APEX Club</div><p>Coordinated the One Raft One Nation kayaking event with 50+ participants from SMU, NUS and NTU.</p></div><div class="timeline-item"><span class="when">Term 5 · 2026</span><h3>DES undergraduate teaching support</h3><div class="where">SUTD</div><p>Prepared grading-scheme and exergy teaching materials. The site keeps this description conservative pending confirmation of the official role title.</p></div><div class="timeline-item"><span class="when">2026</span><h3>SEMI Tech Zoomers</h3><div class="where">1st Prize · Southeast Asia competition</div><p>Recognised with the team in a semiconductor-industry competition mentored by SSMC.</p></div><div class="timeline-item"><span class="when">Sep 2025</span><h3>GEO Mahidol — Innovation &amp; Entrepreneurship</h3><div class="where">Mahidol University, Thailand</div><p>SUTD global programme; completed an individual design-thinking case study on ride-hailing mobility in Thailand.</p><a href="assets/projects/global/mahidol-case-study/mahidol-case-study.pdf" target="_blank">View case study ↗</a><a href="assets/projects/global/mahidol-case-study/mahidol-plastic-waste.jpg" target="_blank">Case-study chart ↗</a></div></div></div></div><div class="subsection"><h3>Technical toolkit</h3><div class="skills"><div class="skill"><h3>Embedded systems</h3><p>ESP32-S3 · Arduino · PlatformIO<br>State machines · I²C · ToF sensors · servo and motor control · safety stops</p></div><div class="skill"><h3>Electronics</h3><p>KiCad · BTS7960 · PCA9685<br>Schematics · PCB layout · netlists · fabrication outputs · sensor interfaces</p></div><div class="skill"><h3>Python &amp; data</h3><p>Python · pandas · NumPy · SQLite<br>ETL pipelines · APIs · testing · regression · Monte Carlo · quantitative analysis</p></div><div class="skill"><h3>Engineering tools</h3><p>Streamlit · Plotly · CST · VBA<br>Fusion 360 · Git/GitHub · technical documentation</p></div></div></div><div class="subsection"><h3>Recognition</h3><div class="recognition"><div class="box"><h3>SEMI Tech Zoomers 2026 — 1st Prize</h3><p>SEA semiconductor-industry competition.</p><a href="assets/recognition/semi-tech-zoomers-1st-prize.png" target="_blank">View certificate ↗</a></div><div class="box"><h3>Sustainability Practice Prize</h3><p>DTI Prototype Dismantling Drive.</p><a href="assets/recognition/dti-sustainability-prize.pdf" target="_blank">View certificate ↗</a></div><div class="box"><h3>One Raft One Nation</h3><p>APEX certificate for contributing to the largest raft formed by kayaks, 3 August 2025.</p><a href="assets/recognition/one-raft-one-nation.pdf" target="_blank">View certificate ↗</a></div><div class="box"><h3>CodeChamps 2024</h3><p>SUTD-IEEE coding competition, December 2024.</p><a href="assets/recognition/codechamps-2024.pdf" target="_blank">Certificate of participation ↗</a></div></div></div></div></section>
-<section id="contact" class="project-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">04 · Contact</div><h2>Contact</h2></div><p>For internships, project discussions or technical questions.</p></div><div class="hero-meta"><a class="pill" href="mailto:chuahengli@gmail.com">chuahengli@gmail.com</a><a class="pill" href="https://github.com/chuahengli" target="_blank" rel="noopener">github.com/chuahengli</a><a class="pill" href="https://www.linkedin.com/in/heng-li-chua" target="_blank" rel="noopener">LinkedIn</a><a class="pill" href="assets/portfolio-deck.pdf" target="_blank">Portfolio deck</a></div></div></section>
+<nav><div class="wrap nav">
+  <span class="name">Chua Heng Li</span>
+  <div class="links">
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <h1>Chua Heng Li</h1>
+  <p>Engineering Product Development (EPD) student at SUTD, specialising in electrical engineering with an AI minor. My work covers embedded control, electronics, RF design, engineering modelling, machine learning, and data tools. My projects include PCB and firmware development, RF simulation, engineering analysis, machine learning, and Python-based data tools.</p>
+  <div class="hero-skills" aria-label="Skills">
+    <div class="hs"><span class="hs-k">Programming Languages</span><span class="hs-v">Python · C · C++</span></div>
+    <div class="hs"><span class="hs-k">Libraries &amp; Frameworks</span><span class="hs-v">pandas · NumPy · Plotly · Streamlit · scikit-learn</span></div>
+    <div class="hs"><span class="hs-k">Hardware &amp; Design Tools</span><span class="hs-v">Arduino · KiCad · AutoCAD · Fusion360 · CST Microwave Studio</span></div>
+    <div class="hs"><span class="hs-k">Development Tools</span><span class="hs-v">Git · GitHub</span></div>
+    <div class="hs"><span class="hs-k">Languages</span><span class="hs-v">English · Mandarin</span></div>
+  </div>
+  <div class="hero-contact" aria-label="Contact links">
+    <a class="btn" href="https://github.com/chuahengli"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/heng-li-chua"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M218.123122,218.127392 L180.191928,218.127392 L180.191928,158.724263 C180.191928,144.559023 179.939053,126.323993 160.463756,126.323993 C140.707926,126.323993 137.685284,141.757585 137.685284,157.692986 L137.685284,218.123441 L99.7540894,218.123441 L99.7540894,95.9665207 L136.168036,95.9665207 L136.168036,112.660562 L136.677736,112.660562 C144.102746,99.9650027 157.908637,92.3824528 172.605689,92.9280076 C211.050535,92.9280076 218.138927,118.216023 218.138927,151.114151 L218.123122,218.127392 Z M56.9550587,79.2685282 C44.7981969,79.2707099 34.9413443,69.4171797 34.9391618,57.260052 C34.93698,45.1029244 44.7902948,35.2458562 56.9471566,35.2436736 C69.1040185,35.2414916 78.9608713,45.0950217 78.963054,57.2521493 C78.9641017,63.090208 76.6459976,68.6895714 72.5186979,72.8184433 C68.3913982,76.9473153 62.7929898,79.26748 56.9550587,79.2685282 M75.9206558,218.127392 L37.94995,218.127392 L37.94995,95.9665207 L75.9206558,95.9665207 L75.9206558,218.127392 Z M237.033403,0.0182577091 L18.8895249,0.0182577091 C8.57959469,-0.0980923971 0.124827038,8.16056231 -0.001,18.4706066 L-0.001,237.524091 C0.120519052,247.839103 8.57460631,256.105934 18.8895249,255.9977 L237.033403,255.9977 C247.368728,256.125818 255.855922,247.859464 255.999,237.524091 L255.999,18.4548016 C255.851624,8.12438979 247.363742,-0.133792868 237.033403,0.000790807055"/></svg>LinkedIn</a>
+    <a class="btn btn--resume" href="assets/resume/Chua-Heng-Li-Resume-Aug-2026.pdf" aria-label="Resume (PDF)"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>Résumé</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+<section id="education">
+  <h2 class="sec-title">Education</h2>
+
+  <div class="ex">
+    <div class="ex-title"><h3>Engineering Product Development</h3><span class="when">SUTD · 2024–present</span></div>
+    <div class="where">Electrical engineering specialisation · AI minor · cGPA 4.2/5.0 · SUTD Global Merit Scholarship</div>
+    <p>Embedded systems, electronics, machine learning, electromagnetics and engineering analysis.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-title"><h3>A Levels</h3><span class="when">Jurong Pioneer Junior College · 2020–2021</span></div>
+    <div class="where">RP 86.25 · H3 Physics (Semiconductor Devices) with NTU</div>
+    <p>Quartermaster of the Guitar Ensemble; represented JPJC at the Singapore Youth Festival, earning a Certificate of Commendation.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="sec-title">Experience</h2>
+
+  <div class="ex">
+    <div class="ex-title"><h3>Operations Assistant</h3><span class="when">UOB Kay Hian · Mar–Sep 2024</span></div>
+    <div class="where">Dividend and corporate-action reconciliation</div>
+    <p>Reconciled dividend and corporate-action data across securities and client accounts, and audited records across thousands of accounts.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-title"><h3>Vice President</h3><span class="when">APEX Club · Jan 2025–Jan 2026</span></div>
+    <div class="where">Student club leadership</div>
+    <p>Coordinated the One Raft One Nation kayaking event with 50+ participants from SMU, NUS and NTU.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-title"><h3>DES Teaching Assistant</h3><span class="when">SUTD · Term 5, 2026</span></div>
+    <div class="where">Undergraduate teaching assistance</div>
+    <p>Prepared grading-scheme and exergy teaching materials.</p>
+  </div>
+
+  <div class="ex">
+    <div class="ex-title"><h3>GEO Mahidol</h3><span class="when">Mahidol University, Thailand · 2025</span></div>
+    <div class="where">Design thinking · innovation &amp; entrepreneurship</div>
+    <p>Completed an individual design-thinking case study on ride-hailing mobility in Thailand.</p>
+  </div>
+
+  <h2 class="sec-title" style="margin-top:34px">Recognition</h2>
+  <div class="recog">
+    <span><b>SEMI Tech Zoomers 2026</b> — 1st Prize</span>
+    <span><b>Sustainability Practice Prize</b> — DTI Prototype Dismantling Drive</span>
+    <span><b>One Raft One Nation</b> — APEX certificate</span>
+    <span><b>CodeChamps 2024</b> — participation</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="sec-title">Projects</h2>
+
+  <div class="project">
+    <div class="project-media">
+      <a href="assets/projects/engineering/amr/final-prototype.jpg"><img src="assets/projects/engineering/amr/final-prototype.jpg" alt="Falali robot prototype"></a>
+      <div class="media-strip">
+        <a href="assets/projects/engineering/amr/arm-schematic.pdf"><img src="assets/projects/engineering/amr/arm-schematic.png" alt="Falali arm schematic"></a>
+        <a href="assets/projects/engineering/amr/laser-cutting.jpg"><img src="assets/projects/engineering/amr/laser-cutting.jpg" alt="Falali laser-cut component fabrication"></a>
+        <a href="assets/projects/engineering/amr/arm-subsystem-demo.mov"><img src="assets/projects/engineering/amr/final-prototype.jpg" alt="Falali arm subsystem demonstration"></a>
+      </div>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Falali — One AMR Fits All</h3><span class="date">30.007 EDI · 2026</span></div>
+      <div class="p-context">Autonomous mobile robot · embedded control</div>
+      <p class="p-desc">Team project developing an autonomous mobile-robot prototype for trolley transport in textile manufacturing. I designed the arm-subsystem PCB in KiCad and wrote the ESP32-S3 firmware covering the arm state machine, ToF sensing, servo control and safety interlocks.</p>
+      <div class="p-links">
+        <a href="assets/projects/engineering/amr/arm-schematic.pdf">Arm schematic</a>
+        <a href="assets/projects/engineering/amr/arm-pcb-layout.pdf">PCB layout</a>
+        <a href="assets/projects/engineering/amr/pdr.pdf">PDR</a>
+        <a href="assets/projects/engineering/amr/firmware-source.zip">Firmware source</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-media">
+      <a href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate kinematics output"></a>
+      <div class="media-strip">
+        <a href="assets/projects/engineering/alleviate/monte-carlo-torque.png"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Alleviate Monte Carlo torque output"></a>
+        <a href="assets/projects/engineering/alleviate/kinematic_model_carriage_displacement.html"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Interactive Alleviate kinematics model"></a>
+        <a href="assets/projects/engineering/alleviate/torque_model_heatmap.html"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Interactive Alleviate torque heatmap"></a>
+      </div>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Alleviate — Sit-to-Stand Bed Assist</h3><span class="date">Engineering for Good · 2026</span></div>
+      <div class="p-context">Kinematics · Monte Carlo · motor sizing</div>
+      <p class="p-desc">Five-person project building a modular bed add-on to help elderly users sit to stand. I led the computational analysis: shaft-to-carriage kinematics and a one-million-run Monte Carlo model for motor sizing.</p>
+      <div class="p-links">
+        <a href="assets/projects/engineering/alleviate/kinematic_model_carriage_displacement.html">Kinematics model</a>
+        <a href="assets/projects/engineering/alleviate/monte-carlo-torque.png">Monte Carlo output</a>
+        <a href="assets/projects/engineering/alleviate/torque_model_heatmap.html">Torque heatmap</a>
+        <a href="assets/projects/engineering/alleviate/milestones/milestone-2-hengli-portion.pdf">Milestone section</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-media">
+      <video controls muted preload="metadata" poster="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg"><source src="assets/projects/engineering/bird-deterrent/origaminah-demo.mp4" type="video/mp4"></video>
+      <div class="media-strip">
+        <a href="assets/projects/engineering/bird-deterrent/main-structure.png"><img src="assets/projects/engineering/bird-deterrent/main-structure.png" alt="Origaminah structure"></a>
+        <a href="assets/projects/engineering/bird-deterrent/circuit-side-view.png"><img src="assets/projects/engineering/bird-deterrent/circuit-side-view.png" alt="Origaminah circuit side view"></a>
+        <a href="assets/projects/engineering/bird-deterrent/wire-trunking.png"><img src="assets/projects/engineering/bird-deterrent/wire-trunking.png" alt="Origaminah wire trunking"></a>
+      </div>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Origaminah — Bird Deterrence</h3><span class="date">Design Thinking &amp; Innovation · 2025</span></div>
+      <div class="p-context">Product design · Arduino · motion sensing · electrical subsystem</div>
+      <p class="p-desc">Five-person team project developing Origaminah, a bird-deterrence device for a semi-outdoor SUTD canteen. I worked on the electrical subsystem: integrating the Arduino Nano, motion sensor, battery, flasher input and wire trunking, then routing the electrical output to the deployable origami modules.</p>
+      <div class="p-links">
+        <a href="assets/projects/engineering/bird-deterrent/circuit-side-view.png">Circuit design</a>
+        <a href="assets/projects/engineering/bird-deterrent/main-structure.png">Structure</a>
+        <a href="assets/projects/engineering/bird-deterrent/motion-sensor.png">Motion sensor</a>
+        <a href="assets/projects/engineering/bird-deterrent/wire-trunking.png">Wire trunking</a>
+        <a href="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg">Project poster</a>
+        <a href="assets/projects/engineering/bird-deterrent/origaminah-demo.mp4">Prototype demonstration</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-media">
+      <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-top-view.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-top-view.png" alt="CST top view of concentric-ring antenna"></a>
+      <div class="media-strip">
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png" alt="Concentric-ring antenna geometry and dimensions"></a>
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png" alt="Concentric-ring antenna S11 result"></a>
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png" alt="Concentric-ring antenna far-field directivity"></a>
+      </div>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Concentric-Circle Flexible Antenna</h3><span class="date">Electromagnetics · 2026</span></div>
+      <div class="p-context">CST simulation · RF design · VBA automation</div>
+      <p class="p-desc">Individual project designing and simulating a concentric-ring antenna for the 2.45 GHz ISM band. I built the CST model and parameterised VBA macro, including the substrate, ground plane, feed, two ring radiators and connecting bar. The model sweeps 1–4 GHz and includes S11, VSWR, efficiency, gain and far-field outputs.</p>
+      <div class="p-links">
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png">Geometry and dimensions</a>
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png">S11 result</a>
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-vswr.png">VSWR result</a>
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png">Far-field directivity</a>
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-cst-macro.bas">CST VBA macro</a>
+        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-cst-project.cst">CST project</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-media">
+      <a href="assets/projects/engineering/ml/battery-sem-sample.jpg"><img src="assets/projects/engineering/ml/battery-sem-sample.jpg" alt="Battery SEM classification sample"></a>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Engineering Machine Learning</h3><span class="date">CaDDE · 2026</span></div>
+      <div class="p-context">Machine learning · modelling</div>
+      <p class="p-desc">Individual project applying machine learning to engineering problems: electrochemical-stress regression, engine-pump anomaly detection and battery SEM image classification.</p>
+      <div class="p-links"><a href="assets/projects/engineering/ml/individual-report.docx">Individual report</a></div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-media">
+      <a href="assets/projects/engineering/modelling/parachute-cover.jpg"><img src="assets/projects/engineering/modelling/parachute-cover.jpg" alt="Parachute drop modelling report cover"></a>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Parachute Drop Modelling</h3><span class="date">Modelling · 2024</span></div>
+      <div class="p-context">Experimental data · regression · optimisation</div>
+      <p class="p-desc">Team data-analysis project connecting measured parachute drops to a terminal-velocity and drag model using regression.</p>
+      <div class="p-links"><a href="assets/projects/engineering/modelling/parachute-study.pdf">Study</a></div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-media">
+      <a href="assets/projects/finance/tracker-sample-preview.png"><img src="assets/projects/finance/tracker-sample-preview.png" alt="Portfolio tracker sample dashboard"></a>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Portfolio Tracker &amp; Analyzer</h3><span class="date">2025–present</span></div>
+      <div class="p-context">Python data engineering · SQLite · Streamlit</div>
+      <p class="p-desc">Personal project that retrieves Moomoo OpenD account data, cleans it, stores daily history in SQLite and serves a Streamlit dashboard. Real account data stays private; the preview uses sample data.</p>
+      <div class="p-links">
+        <a href="https://github.com/chuahengli/Stock-Portfolio-project">GitHub repository</a>
+        <a href="assets/projects/finance/tracker-sample-preview.png">Sample dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project project--text">
+    <div class="project-copy">
+      <div class="p-title"><h3>Equity Research Program</h3><span class="date">Ongoing</span></div>
+      <div class="p-context">Structured research · quantitative analysis</div>
+      <p class="p-desc">A structured research program covering AI infrastructure, semiconductors, fintech, memory, power electronics, space and defence. Work follows a brief-to-thesis-to-valuation workflow using Python tooling. The research is AI-assisted: my methodology and decisions are mine, with tool-assisted scanning disclosed.</p>
+      <div class="p-links"><a href="https://github.com/chuahengli">GitHub profile</a></div>
+    </div>
+  </div>
+</section>
+
+
 </main>
-<footer><div class="wrap"><div class="footer-row"><p><b>Chua Heng Li</b><br>Engineering Product Development · Electrical Engineering · AI minor</p><div class="footer-links"><a href="#engineering">Engineering</a><a href="#finance">Python &amp; Finance</a><a href="https://github.com/chuahengli" target="_blank" rel="noopener">GitHub</a><a href="mailto:chuahengli@gmail.com">Email</a></div></div><p class="small">A static GitHub Pages site. Project descriptions are based on source files in the workspace. Private financial data, credentials and unverified team photos are not published.</p></div></footer>
+
+<script>
+document.querySelectorAll('a[href]:not([href^="#"])').forEach((link) => {
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+});
+</script>
+
 </body>
 </html>

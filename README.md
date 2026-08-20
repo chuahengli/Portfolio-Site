@@ -22,7 +22,7 @@ Every project card links to real, first-party evidence: schematics, PCB layouts,
 
 - **Static site** — a single `index.html` plus an `assets/` folder. No build step, no frameworks, no server-side code.
 - **GitHub Pages** renders it directly from the repo (deploy from `main` at the root `/`).
-- Dark engineering theme via CSS custom properties (`:root`), Google Fonts with system fallbacks, scroll-reveal animation with IntersectionObserver (no JavaScript libraries).
+- Plain dark theme via CSS custom properties (`:root`): near-black background, single quiet accent for links, sharp corners and thin hairlines. No framework, no animation, no external fonts — a straightforward, text-first presentation.
 - Everything is **privacy-first**: no financial holdings, live portfolio data, or secrets are published. Financial previews are labelled as illustrative sample data, and no unverified group photos appear on the site.
 
 ---
@@ -34,16 +34,13 @@ Portfolio-Site/
 ├── index.html              ← the entire site (self-contained)
 ├── README.md
 ├── assets/
-│   ├── portfolio-deck.pdf
 │   ├── projects/
 │   │   ├── engineering/
 │   │   │   ├── alleviate/        ← kinematics + Monte Carlo + interactive HTML models + milestone decks
 │   │   │   ├── amr/              ← Falali media, diagrams, firmware, PCB and PDR files
 │   │   │   ├── antenna/          ← S11 + EM-1D deliverables + CST automation scripts
-│   │   │   ├── c-bracket/        ← CAD → 3D print → tensile test package
 │   │   │   ├── ml/               ← project ML report + sample data
-│   │   │   ├── modelling/        ← parachute experiment report
-│   │   │   └── underwater-comms/ ← technical presentation + generated diagrams
+│   │   │   └── modelling/        ← parachute experiment report
 │   │   ├── finance/              ← sample-data tracker preview (illustrative)
 │   │   └── global/               ← GEO Mahidol case study + charts
 │   └── recognition/              ← shareable certificates
@@ -68,11 +65,11 @@ Or just double-click `index.html`.
 ## Customising
 
 - **Add or replace a project** — drop files into the matching folder under
-  `assets/projects/...`, then add or edit the relevant `<article class="project">` block
+  `assets/projects/...`, then add or edit the relevant `div.project` block
   in `index.html`.
-- **Add a photo** — place `photo.jpg` into `assets/` and uncomment the
-  `<img id="photo" ...>` line in `index.html` (falls back to your initials until then).
-- **Update links/contact** — the footer icons point at [github.com/chuahengli](https://github.com/chuahengli) and `linkedin.com/in/heng-li-chua` (verified).
+- **Add a photo** — the hero currently has no avatar; add a `<img>` in the
+  hero section if you want one.
+- **Update links/contact** — the footer and contact section link to [github.com/chuahengli](https://github.com/chuahengli) and `linkedin.com/in/heng-li-chua` (verified).
 
 Live edits should be **validated** before publishing:
 
