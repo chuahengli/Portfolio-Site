@@ -67,9 +67,14 @@ Hard rules:
 
 ## Page structure (current, intentional)
 - Sticky plain nav: name left, two links (Projects, Recognition).
-- Hero: TWO-COLUMN grid. Left column: name (48px) + one summary paragraph
+- Hero: TWO-COLUMN grid. Left column: name (48px) + intro paragraph
   + GitHub / LinkedIn / Resume buttons (inline-SVG brand marks, never asset
-  files). Right column: skills panel (`hero-skills`) — bordered card with a
+  files) + a compact "bio" block (`.hero-bio`, below the buttons, hairline
+  top divider): two one-line rows — Education: "SUTD · Engineering Product
+  Development · 2024–present"; Experience: "UOB Kay Hian · Operations
+  Assistant · Mar–Sep 2024" (label column 100px muted 14px nowrap, values
+  16px fg; NO descriptions — user wants one-liners only).
+  Right column: skills panel (`hero-skills`) — bordered card with a
   "Skills" title (16px semibold, underlined by a hairline) at top, then
   aligned rows: label column fixed 180px (14px muted, nowrap), values as ONE
   flowing line with literal " · " separators (never flex-spans/pseudo-dots —
@@ -81,15 +86,40 @@ Hard rules:
   section-intro paragraphs anywhere — user removed them as unneeded filler.
 - Type scale (whole px): headings 48px hero, 36px section, 24px group title,
   16px body. Minimum 12px.
-- NO dedicated Education/Experience sections — user decision (Aug-2026): the
-  resume PDF is one click away in the hero, and the hero summary already
-  covers SUTD/EPD/AI. Do NOT re-add them unless the user asks; if asked,
-  add a single quiet text-only block (label/value rows), not cards.
+- NO dedicated full Education/Experience SECTIONS — user decision (Aug-2026):
+  career details appear as two one-line rows in the hero bio block
+  (`.hero-bio`, left column under the buttons) and in the resume PDF. Do NOT
+  re-add full sections unless the user asks; if asked, keep them quiet
+  text-only label/value rows, not cards. Bio facts are verified: SUTD EPD
+  2024–present; UOB Kay Hian Operations Assistant Mar–Sep 2024.
 
-## Pending / optional
-- Gallery/media assets: user curates; agent stages into assets/ subfolders.
-- If the user changes their mind about Education/Experience on-page, update
-  the "Page structure" section above at the same time.
+## Falali project box (current, intentional)
+- Lead media = `arm-subsystem-diagram.svg` (COMPONENT-level functional block diagram of
+  the user's arm subsystem — blue borders = my contribution; from HW05
+  function-diagram-02-arm-subsystem.svg; rendered contain-fit on a light sheet).
+- `system-flow.svg` = SYSTEM-level functional flow diagram (HW05
+  function-diagram-01-system-flow.svg) — linked in p-links as "System flow diagram".
+- Media strip (6): arm schematic · arm PCB layout (2D) · arm PCB 3D view ·
+  wheel PCB 3D view · wheel schematic · casing fabrication (laser-cutting acrylic
+  for the external casing). All raster thumbs ≥1135px.
+- 4 demo videos: wheel-drive demo, rail strength test, arm subsystem demo,
+  clamping demo. The clamping video is the LONG 56.5s "Clamping on demo.mp4"
+  (shows the clamping action), NOT the short 11.4s "Clamped_on_demo.mp4".
+  The arm subsystem demo was converted .MOV -> MP4 (H.264+AAC) for browsers;
+  the .mov staging file was deleted. Poster frame for the arm demo extracted.
+- p-links (9, in order): Arm subsystem block diagram · System flow diagram ·
+  Arm schematic · Arm PCB layout · Wheel-drive schematic · Arm fab output ·
+  Wheel-drive fab output · PDR deck · Firmware source.
+- "PDR deck" = the final presentation slides to the instructors (top-level
+  "EDI Presentation 1 and 2 and 3 (PDR).pdf"). NOT the SDR deck.
+- Course naming: 30.007 = Engineering Design Innovation (EDI) — the course
+  unit, not an acronym on its own. Public label on the card is the full name:
+  "30.007 Engineering Design Innovation / 2026". Never display bare "EDI".
+- NOT included: PDB/PCB-master doc (other subsystem; user removed; asset
+  deleted), PCB invoices/receipts, people-photos (exhibition/EM-prof/grp),
+  .MOV originals except converted arm demo, PCA9548A breakout (earlier
+  iteration), user manuals, KiCad backup zips, .pio vendor libs.
+- Original project folder = evidence source of truth (see SITE-README).
 
 ## Content rules (non-negotiable)
 - Privacy-first: never publish real financial holdings / live portfolio data.

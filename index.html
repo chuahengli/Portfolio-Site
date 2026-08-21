@@ -59,6 +59,9 @@ nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px soli
 .hero-contact .btn svg{width:16px;height:16px;flex:none;fill:currentColor}
 .hero-contact .btn:hover{border-color:var(--accent);text-decoration:none}
 .hero-contact .btn--resume{border-color:rgba(212,175,55,.5)}
+.hero-bio{margin-top:28px;border-top:1px solid var(--line);padding-top:14px;display:grid;grid-template-columns:100px minmax(0,1fr);gap:8px 16px}
+.hero-bio .bio-k{font-size:14px;font-weight:600;color:var(--muted)}
+.hero-bio .bio-v{font-size:16px;color:var(--fg);line-height:1.5}
 main{display:block}
 section{padding:76px 0;border-top:1px solid var(--line)}
 .sec-title{font-size:36px;font-weight:600;letter-spacing:.01em;margin:0 0 24px}
@@ -71,17 +74,22 @@ section{padding:76px 0;border-top:1px solid var(--line)}
 .project--text{grid-template-columns:1fr}
 .project-media{min-width:0}
 .project-media>a:first-child{display:block}
-.project-media>a img,.project-media>video{width:100%;height:250px;object-fit:cover;
+.project-media>a img,.project-media>img:first-child,.project-media>video{width:100%;height:250px;object-fit:cover;
   border-radius:12px;background:var(--bg)}
+.project-media .media-svg{object-fit:contain;height:300px;padding:14px;background:#f8fafc}
 .project-media>video{height:250px;object-fit:contain}
-.media-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.media-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.media-diagrams{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.media-diagrams .media-thumb img{height:150px}
 .media-thumb{position:relative;display:block;border:1px solid var(--line);border-radius:8px;
   overflow:hidden;background:var(--panel)}
-.media-thumb img{width:100%;height:76px;object-fit:cover;border-radius:6px}
+.media-thumb img{width:100%;height:120px;object-fit:cover;border-radius:6px}
+.media-thumb img.thumb-contain{object-fit:contain;background:#f8fafc}
 .media-thumb span{display:block;padding:5px 6px;font-size:12px;color:var(--muted);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .media-thumb:hover{border-color:var(--accent);text-decoration:none}
-.media-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.media-videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.media-videos.media-videos--row{grid-template-columns:repeat(4,minmax(0,1fr))}
 .video-tile{min-width:0}
 .video-tile video{display:block;width:100%;height:150px;object-fit:cover;
   border-radius:10px;background:var(--bg)}
@@ -127,8 +135,10 @@ section{padding:76px 0;border-top:1px solid var(--line)}
   .hero-contact{justify-content:flex-start}
   .project{padding:18px;gap:20px}
   .project-media img,.project-media>video{height:220px}
-  .media-strip{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .media-thumb img{height:64px}
+  .media-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .media-diagrams{grid-template-columns:1fr}
+  .media-thumb img{height:96px}
+  .media-videos.media-videos--row{grid-template-columns:repeat(2,minmax(0,1fr))}
   .award-card img{height:300px}
   .awards{grid-template-columns:1fr}
 }
@@ -137,7 +147,8 @@ section{padding:76px 0;border-top:1px solid var(--line)}
   .hero h1{font-size:36px}
   .project{padding:16px}
   .project-media img,.project-media>video{height:200px}
-  .media-thumb img{height:60px}
+  .media-thumb img{height:84px}
+  .media-videos.media-videos--row{grid-template-columns:1fr}
   .p-title h3{font-size:22px}
   .award-card img{height:260px}
 }
@@ -162,6 +173,10 @@ section{padding:76px 0;border-top:1px solid var(--line)}
     <a class="btn" href="https://www.linkedin.com/in/heng-li-chua"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M218.123122,218.127392 L180.191928,218.127392 L180.191928,158.724263 C180.191928,144.559023 179.939053,126.323993 160.463756,126.323993 C140.707926,126.323993 137.685284,141.757585 137.685284,157.692986 L137.685284,218.123441 L99.7540894,218.123441 L99.7540894,95.9665207 L136.168036,95.9665207 L136.168036,112.660562 L136.677736,112.660562 C144.102746,99.9650027 157.908637,92.3824528 172.605689,92.9280076 C211.050535,92.9280076 218.138927,118.216023 218.138927,151.114151 L218.123122,218.127392 Z M56.9550587,79.2685282 C44.7981969,79.2707099 34.9413443,69.4171797 34.9391618,57.260052 C34.93698,45.1029244 44.7902948,35.2458562 56.9471566,35.2436736 C69.1040185,35.2414916 78.9608713,45.0950217 78.963054,57.2521493 C78.9641017,63.090208 76.6459976,68.6895714 72.5186979,72.8184433 C68.3913982,76.9473153 62.7929898,79.26748 56.9550587,79.2685282 M75.9206558,218.127392 L37.94995,218.127392 L37.94995,95.9665207 L75.9206558,95.9665207 L75.9206558,218.127392 Z M237.033403,0.0182577091 L18.8895249,0.0182577091 C8.57959469,-0.0980923971 0.124827038,8.16056231 -0.001,18.4706066 L-0.001,237.524091 C0.120519052,247.839103 8.57460631,256.105934 18.8895249,255.9977 L237.033403,255.9977 C247.368728,256.125818 255.855922,247.859464 255.999,237.524091 L255.999,18.4548016 C255.851624,8.12438979 247.363742,-0.133792868 237.033403,0.000790807055"/></svg>LinkedIn</a>
     <a class="btn btn--resume" href="assets/resume/Chua-Heng-Li-Resume-Aug-2026.pdf" aria-label="Resume (PDF)"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>Resume</a>
    </div>
+    <div class="hero-bio" aria-label="Education and experience">
+      <div class="bio-k">Education</div><div class="bio-v">SUTD · Engineering Product Development · 2024–present</div>
+      <div class="bio-k">Experience</div><div class="bio-v">UOB Kay Hian · Operations Assistant · Mar–Sep 2024</div>
+    </div>
     </div>
     <div class="hero-skills" aria-label="Skills">
       <div class="hero-skills-title">Skills</div>
@@ -183,37 +198,42 @@ section{padding:76px 0;border-top:1px solid var(--line)}
 
   <div class="project">
     <div class="project-media">
-      <a href="assets/projects/engineering/amr/final-prototype.jpg"><img src="assets/projects/engineering/amr/final-prototype.jpg" alt="Falali robot prototype"></a>
-      <div class="media-strip" aria-label="Falali project images">
-        <a class="media-thumb" href="assets/projects/engineering/amr/arm-schematic.png"><img src="assets/projects/engineering/amr/arm-schematic.png" alt="Falali arm subsystem schematic" loading="lazy" decoding="async"><span>Arm schematic</span></a>
-        <a class="media-thumb" href="assets/projects/engineering/amr/arm-pcb-layout.png"><img src="assets/projects/engineering/amr/arm-pcb-layout.png" alt="Falali arm subsystem PCB layout" loading="lazy" decoding="async"><span>Arm PCB</span></a>
-        <a class="media-thumb" href="assets/projects/engineering/amr/wheel-drive-pcb-layout.png"><img src="assets/projects/engineering/amr/wheel-drive-pcb-layout.png" alt="Falali wheel-drive PCB layout" loading="lazy" decoding="async"><span>Wheel PCB</span></a>
-        <a class="media-thumb" href="assets/projects/engineering/amr/laser-cutting.jpg"><img src="assets/projects/engineering/amr/laser-cutting.jpg" alt="Falali laser-cut component fabrication" loading="lazy" decoding="async"><span>Fabrication</span></a>
+      <a href="assets/projects/engineering/amr/final-prototype.jpg"><img src="assets/projects/engineering/amr/final-prototype.jpg" alt="Falali finished robot prototype"></a>
+      <div class="media-diagrams" aria-label="Falali system diagrams">
+        <a class="media-thumb" href="assets/projects/engineering/amr/arm-subsystem-diagram.svg"><img class="thumb-contain" src="assets/projects/engineering/amr/arm-subsystem-diagram.svg" alt="Falali arm subsystem component block diagram" loading="lazy" decoding="async"><span>Arm block diagram</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/system-flow.svg"><img class="thumb-contain" src="assets/projects/engineering/amr/system-flow.svg" alt="Falali system flow diagram" loading="lazy" decoding="async"><span>System flow</span></a>
       </div>
-      <div class="media-videos" aria-label="Falali project demonstrations">
+      <div class="media-strip" aria-label="Falali arm subsystem images">
+        <a class="media-thumb" href="assets/projects/engineering/amr/arm-schematic.png"><img src="assets/projects/engineering/amr/arm-schematic.png" alt="Falali arm subsystem schematic" loading="lazy" decoding="async"><span>Arm schematic</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/arm-pcb-layout.png"><img src="assets/projects/engineering/amr/arm-pcb-layout.png" alt="Falali arm subsystem PCB layout" loading="lazy" decoding="async"><span>Arm PCB layout</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/arm-pcb-3d.png"><img src="assets/projects/engineering/amr/arm-pcb-3d.png" alt="Falali arm subsystem PCB 3D view" loading="lazy" decoding="async"><span>Arm PCB 3D</span></a>
+      </div>
+      <div class="media-strip" aria-label="Falali wheel-drive images">
+        <a class="media-thumb" href="assets/projects/engineering/amr/wheel-drive-schematic.png"><img src="assets/projects/engineering/amr/wheel-drive-schematic.png" alt="Falali wheel-drive schematic" loading="lazy" decoding="async"><span>Wheel schematic</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/wheel-drive-pcb-layout.png"><img src="assets/projects/engineering/amr/wheel-drive-pcb-layout.png" alt="Falali wheel-drive PCB layout" loading="lazy" decoding="async"><span>Wheel PCB layout</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/wheel-pcb-3d.png"><img src="assets/projects/engineering/amr/wheel-pcb-3d.png" alt="Falali wheel-drive PCB 3D view" loading="lazy" decoding="async"><span>Wheel PCB 3D</span></a>
+      </div>
+      <div class="media-videos media-videos--row" aria-label="Falali project demonstrations">
         <div class="video-tile"><video controls muted preload="metadata" poster="assets/projects/engineering/amr/final-prototype.jpg" aria-label="Wheel-drive demonstration"><source src="assets/projects/engineering/amr/wheel-drive-demo.mp4" type="video/mp4"></video><span>Wheel-drive demo</span></div>
         <div class="video-tile"><video controls muted preload="metadata" aria-label="Rail strength test"><source src="assets/projects/engineering/amr/rail-strength-test.mp4" type="video/mp4"></video><span>Rail strength test</span></div>
+        <div class="video-tile"><video controls muted preload="metadata" poster="assets/projects/engineering/amr/arm-demo-poster.jpg" aria-label="Arm subsystem demonstration"><source src="assets/projects/engineering/amr/arm-subsystem-demo.mp4" type="video/mp4"></video><span>Arm subsystem demo</span></div>
         <div class="video-tile"><video controls muted preload="metadata" aria-label="Clamping demonstration"><source src="assets/projects/engineering/amr/clamped-demo.mp4" type="video/mp4"></video><span>Clamping demo</span></div>
       </div>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Falali - One AMR Fits All</h3><span class="date">30.007 EDI / 2026</span></div>
-      <div class="p-facts"><span>Role: PCB + firmware</span><span>Platform: ESP32-S3</span><span>Evidence: layouts, source, demos</span></div>
-      <p class="p-desc">Team project developing an autonomous mobile robot for trolley transport in textile manufacturing. I designed the arm and wheel-drive PCBs in KiCad and wrote the ESP32-S3 firmware for the arm state machine, time-of-flight sensing, servo control, and safety interlocks.</p>
+      <div class="p-title"><h3>Falali - One AMR Fits All</h3><span class="date">30.007 Engineering Design Innovation / 2026</span></div>
+      <div class="p-facts"><span>Role: electronics + firmware</span><span>Boards: KiCad → JLCPCB</span><span>Scale: 7-person team · ≥100 kg</span></div>
+      <p class="p-desc">Seven-person engineering innovation project building a low-profile autonomous mobile robot (AMR) that moves existing fabric trolleys in a textile factory. The robot drives underneath the trolley, clamps it with extending side arms, and transports it to its destination with no changes to the trolleys or the factory floor. It fits the factory's ≤200 mm trolley clearance, and the stated requirement is moving a ≥100 kg load: the demo unit carried it with two people on top.</p>
+      <p class="p-desc">I owned the electronics and arm firmware end-to-end. I designed the arm-subsystem and wheel-drive PCBs in KiCad and had them fabricated through JLCPCB, wired and crimped the electronics, and wrote the ESP32-S3 firmware for the arm subsystem, which included the non-blocking state machine, time-of-flight sensing, limit-switch homing, servo and BTS7960 motor control, and the safety interlocks. The robot's two ESP32-S3 controllers (base and arm) are power-bank powered and talk over WiFi.</p>
       <div class="p-links">
-        <a href="assets/projects/engineering/amr/arm-schematic.pdf">Arm schematic</a>
-        <a href="assets/projects/engineering/amr/arm-pcb-layout.pdf">Arm PCB layout</a>
-        <a href="assets/projects/engineering/amr/pcb/wheel-drive-schematic.pdf">Wheel-drive schematic</a>
-        <a href="assets/projects/engineering/amr/pcb/pdb-master-document.pdf">PCB master document</a>
+        <a href="assets/projects/engineering/amr/arm-fab-output.zip">Arm fab output</a>
         <a href="assets/projects/engineering/amr/pcb/Wheel%20Drive%20Fab%20Output.zip">Wheel-drive fab output</a>
-        <a href="assets/projects/engineering/amr/system-flow.svg">System flow</a>
-        <a href="assets/projects/engineering/amr/pdr.pdf">PDR</a>
+        <a href="assets/projects/engineering/amr/pdr.pdf">Final Presentation Slides</a>
         <a href="assets/projects/engineering/amr/firmware-source.zip">Firmware source</a>
       </div>
     </div>
   </div>
-
-  <div class="project">
+<div class="project">
     <div class="project-media">
       <a href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate kinematics output"></a>
       <div class="media-strip" aria-label="Alleviate project images">
