@@ -3,181 +3,210 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chua Heng Li — Engineering Portfolio</title>
+<title>Chua Heng Li - Engineering Product Development Portfolio</title>
 <style>
+/* Portfolio site — refined dark editorial (Aug 2026)
+   Single coherent stylesheet. No uppercase text transforms anywhere.
+   Whole-pixel type scale only (12–56px), single system font family,
+   one quiet accent reserved for links/interactive states. */
 :root{
-  --bg:#0b0e11; --panel:#13181d; --panel-2:#182027; --fg:#edf2f6;
-  --muted:#aeb8c2; --line:#2a343d; --accent:#a9c9e8; --max:1120px;
+  --bg:#121214;              /* dark charcoal (matte) */
+  --panel:#1e2025;           /* dark slate */
+  --fg:#e5e7eb;              /* soft silver */
+  --muted:#9ca3af;
+  --faint:#6b7280;
+  --line:#2b2e36;            /* hairline */
+  --accent:#d4af37;          /* circuit gold: links, focus, interactive only */
+  --max:1100px;
 }
-*,*::before,*::after{box-sizing:border-box;font-family:Arial}
+*,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Arial","Segoe UI","Helvetica Neue",system-ui,sans-serif;
+  font-size:16px;line-height:1.6}
+::selection{background:rgba(212,175,55,.22)}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+section{scroll-margin-top:70px}
 
-nav{position:sticky;top:0;z-index:10;background:rgba(11,14,17,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{height:64px;display:flex;align-items:center;justify-content:space-between;font-size:16px}
-.nav .name{color:var(--fg);font-weight:600}
-.nav .links{display:flex;gap:28px}
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav .name{font-size:16px;font-weight:600;color:var(--fg)}
+.nav .links{display:flex;gap:26px}
 .nav .links a{color:var(--muted)}
 .nav .links a:hover{color:var(--fg);text-decoration:none}
 @media(max-width:700px){.nav .links{display:none}}
 
-.hero{padding:88px 0 72px;max-width:none;text-align:center}
-.hero h1{margin:0;font-size:48px;line-height:1.1;font-weight:600;letter-spacing:-.02em}
-.hero p{margin:22px auto 0;color:var(--muted);max-width:850px;font-size:18px;line-height:1.7}
-.hero-skills{display:table;margin:26px auto 0}
-.hero-skills .hs{display:table-row}
-.hero-skills .hs-k{display:table-cell;padding-right:18px;color:var(--muted);font-size:13px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
-.hero-skills .hs-v{display:table-cell;color:var(--fg);font-size:15px;white-space:nowrap}
-.hero-contact{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:24px}
-.hero-contact .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid #3a4854;border-radius:6px;color:var(--fg);background:rgba(169,201,232,.05);font-size:15px;font-weight:600}
+.hero{padding:88px 0 68px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.85fr);gap:48px;align-items:center}
+.hero-copy{min-width:0}
+.hero h1{margin:0;font-size:48px;line-height:1.12;font-weight:600;letter-spacing:-.01em}
+.hero p{margin:20px 0 0;color:var(--muted);font-size:16px;line-height:1.7;max-width:640px}
+.hero-skills{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:26px 28px 8px}
+.hero-skills-title{font-size:16px;font-weight:600;color:var(--fg);margin:0 0 16px;padding-bottom:14px;border-bottom:1px solid var(--line);letter-spacing:.01em}
+.hero-skills .hs{display:grid;grid-template-columns:180px minmax(0,1fr);gap:3px 16px;align-items:start;padding:11px 0}
+.hero-skills .hs + .hs{border-top:1px solid var(--line)}
+.hero-skills .hs-k{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
+.hero-skills .hs-v{min-width:0}
+.hero-skills .hs-v span{font-size:16px;color:var(--fg)}
+.hero-contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero-contact .btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;
+  border:1px solid var(--line);border-radius:6px;color:var(--fg);background:transparent;
+  font-size:16px;font-weight:600}
 .hero-contact .btn svg{width:16px;height:16px;flex:none;fill:currentColor}
-.hero-contact .btn:hover{border-color:#5a6b7d;background:rgba(169,201,232,.12);text-decoration:none}
-.hero-contact .btn--resume{border-color:rgba(169,201,232,.45);background:rgba(169,201,232,.10)}
-@media(max-width:700px){.hero{padding:64px 0 52px}.hero h1{font-size:36px}.hero p{font-size:16px}.hero-skills{display:block}.hero-skills .hs{display:block}.hero-skills .hs-k,.hero-skills .hs-v{display:inline;padding:0}.hero-skills .hs-v{white-space:normal}}
+.hero-contact .btn:hover{border-color:var(--accent);text-decoration:none}
+.hero-contact .btn--resume{border-color:rgba(212,175,55,.5)}
+main{display:block}
+section{padding:76px 0;border-top:1px solid var(--line)}
+.sec-title{font-size:36px;font-weight:600;letter-spacing:.01em;margin:0 0 24px}
+.sub-title{font-size:24px;font-weight:600;color:var(--fg);margin:48px 0 24px;letter-spacing:.01em}
+.sub-title:first-of-type{margin-top:0}
 
-section{padding:62px 0;border-top:1px solid var(--line)}
-.sec-title{font-size:21px;letter-spacing:.04em;text-transform:uppercase;color:var(--fg);margin:0 0 26px;font-weight:600}
-
-.project{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:34px;padding:28px;margin:0 0 24px;background:linear-gradient(135deg,var(--panel),#101519);border:1px solid var(--line);border-radius:14px}
+.project{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:30px;
+  padding:26px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
 .project:last-of-type{margin-bottom:0}
+.project--text{grid-template-columns:1fr}
 .project-media{min-width:0}
 .project-media>a:first-child{display:block}
-.project-media img,.project-media video{display:block;width:100%;height:300px;object-fit:cover;border:1px solid var(--line);border-radius:9px;background:#0e1215}
-.project-media video{object-fit:contain}
-.media-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-.media-strip a{display:block}
-.media-strip img{height:84px;border-radius:6px}
-.project-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}
-.p-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.p-title h3{margin:0;font-size:24px;line-height:1.25;font-weight:600}
-.p-title .date{color:var(--muted);font-size:14px;font-weight:400}
-.p-context{color:var(--accent);font-size:16px;margin:10px 0 0}
-.p-desc{margin:16px 0 0;color:var(--muted);font-size:18px;line-height:1.7}
-.p-links{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
-.p-links a{padding:8px 12px;border:1px solid #3a4854;border-radius:6px;font-size:16px;background:rgba(169,201,232,.05)}
-.p-links a:hover{background:rgba(169,201,232,.12);text-decoration:none}
-.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.project-tags span{color:var(--muted);font-size:14px;padding:4px 8px;border:1px solid var(--line);border-radius:999px}
-.project--text{grid-template-columns:1fr}
-.project--text .project-copy{max-width:820px}
+.project-media>a img,.project-media>video{width:100%;height:250px;object-fit:cover;
+  border-radius:12px;background:var(--bg)}
+.project-media>video{height:250px;object-fit:contain}
+.media-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.media-thumb{position:relative;display:block;border:1px solid var(--line);border-radius:8px;
+  overflow:hidden;background:var(--panel)}
+.media-thumb img{width:100%;height:76px;object-fit:cover;border-radius:6px}
+.media-thumb span{display:block;padding:5px 6px;font-size:12px;color:var(--muted);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.media-thumb:hover{border-color:var(--accent);text-decoration:none}
+.media-videos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.video-tile{min-width:0}
+.video-tile video{display:block;width:100%;height:150px;object-fit:cover;
+  border-radius:10px;background:var(--bg)}
+.video-tile span{display:block;padding:5px 2px 0;font-size:12px;color:var(--muted)}
+.video-feature video{display:block;width:100%;height:260px;object-fit:contain;
+  border-radius:12px;background:var(--bg)}
+.video-feature>span{display:block;font-size:12px;color:var(--muted)}
 
-.ex{margin-bottom:22px;padding:20px 0;border-bottom:1px solid var(--line)}
-.ex:last-of-type{border-bottom:0}
-.ex .ex-title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.ex .ex-title h3{margin:0;font-size:18px;font-weight:600}
-.ex .ex-title .when{color:var(--muted);font-size:14px}
-.ex .where{color:var(--muted);font-size:16px;margin-top:5px}
-.ex p{color:var(--muted);font-size:16px;margin:7px 0 0;max-width:760px}
-.recog{display:flex;gap:10px 20px;font-size:16px;color:var(--muted);flex-wrap:wrap}
-.recog span{padding:8px 12px;border:1px solid var(--line);border-radius:6px}
-.recog b{font-weight:600;color:var(--fg)}
-@media(max-width:800px){.wrap{padding:0 22px}.project{grid-template-columns:1fr;padding:22px;gap:24px}.project-media img,.project-media video{height:260px}.p-desc{font-size:16px}}
-@media(max-width:520px){.hero h1{font-size:36px}.project-media img,.project-media video{height:220px}.media-strip img{height:70px}.p-title h3{font-size:24px}}
+.project-copy{min-width:0;display:flex;flex-direction:column}
+.p-title{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.p-title h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
+.p-title .date{color:var(--muted);font-size:14px;font-weight:400;white-space:nowrap}
+.p-facts{margin-top:12px;color:var(--muted);font-size:14px;line-height:1.5}
+.p-facts span{white-space:normal}
+.p-facts span:not(:first-child)::before{content:"· ";color:var(--faint)}
+.p-desc{font-size:16px;line-height:1.75;color:var(--muted);margin:16px 0 0;max-width:640px}
+.p-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.p-links a{padding:6px 10px;border:1px solid var(--line);border-radius:6px;
+  font-size:14px;color:var(--accent);background:transparent}
+.p-links a:hover{border-color:var(--accent);background:rgba(169,201,232,.08);text-decoration:none}
+
+.awards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.award-card{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.award-card h3{font-size:16px;font-weight:600;margin:0 0 14px}
+.award-card a{display:block}
+.award-card img{width:100%;height:340px;object-fit:contain;border:1px solid var(--line);
+  border-radius:10px;background:var(--bg)}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .project{grid-template-columns:1fr;padding:22px;gap:24px}
+  .project-media img,.project-media>video{height:240px}
+  .media-videos{grid-template-columns:1fr}
+  .media-videos video{height:200px}
+  .p-desc{font-size:16px}
+  .awards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .wrap{padding:0 18px}
+  .hero{padding:56px 0 44px}
+  .hero h1{font-size:44px}
+  .hero p{font-size:16px}
+  .hero-contact{justify-content:flex-start}
+  .project{padding:18px;gap:20px}
+  .project-media img,.project-media>video{height:220px}
+  .media-strip{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .media-thumb img{height:64px}
+  .award-card img{height:300px}
+  .awards{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .wrap{padding:0 16px}
+  .hero h1{font-size:36px}
+  .project{padding:16px}
+  .project-media img,.project-media>video{height:200px}
+  .media-thumb img{height:60px}
+  .p-title h3{font-size:22px}
+  .award-card img{height:260px}
+}
 </style>
 </head>
 <body>
 <nav><div class="wrap nav">
   <span class="name">Chua Heng Li</span>
   <div class="links">
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <h1>Chua Heng Li</h1>
-  <p>Engineering Product Development (EPD) student at SUTD, specialising in electrical engineering with an AI minor. My work covers embedded control, electronics, RF design, engineering modelling, machine learning, and data tools. My projects include PCB and firmware development, RF simulation, engineering analysis, machine learning, and Python-based data tools.</p>
-  <div class="hero-skills" aria-label="Skills">
-    <div class="hs"><span class="hs-k">Programming Languages</span><span class="hs-v">Python · C · C++</span></div>
-    <div class="hs"><span class="hs-k">Libraries &amp; Frameworks</span><span class="hs-v">pandas · NumPy · Plotly · Streamlit · scikit-learn</span></div>
-    <div class="hs"><span class="hs-k">Hardware &amp; Design Tools</span><span class="hs-v">Arduino · KiCad · AutoCAD · Fusion360 · CST Microwave Studio</span></div>
-    <div class="hs"><span class="hs-k">Development Tools</span><span class="hs-v">Git · GitHub</span></div>
-    <div class="hs"><span class="hs-k">Languages</span><span class="hs-v">English · Mandarin</span></div>
-  </div>
-  <div class="hero-contact" aria-label="Contact links">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1>Chua Heng Li</h1>
+      <p>Engineering Product Development (EPD) student at SUTD, specialising in electrical engineering with a minor in AI. I design and analyse systems across PCB and firmware development, embedded control, RF design, engineering modelling, and machine learning, while building Python data tools and conducting structured equity research in technology and finance.</p>
+      <div class="hero-contact" aria-label="Contact links">
     <a class="btn" href="https://github.com/chuahengli"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>GitHub</a>
     <a class="btn" href="https://www.linkedin.com/in/heng-li-chua"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M218.123122,218.127392 L180.191928,218.127392 L180.191928,158.724263 C180.191928,144.559023 179.939053,126.323993 160.463756,126.323993 C140.707926,126.323993 137.685284,141.757585 137.685284,157.692986 L137.685284,218.123441 L99.7540894,218.123441 L99.7540894,95.9665207 L136.168036,95.9665207 L136.168036,112.660562 L136.677736,112.660562 C144.102746,99.9650027 157.908637,92.3824528 172.605689,92.9280076 C211.050535,92.9280076 218.138927,118.216023 218.138927,151.114151 L218.123122,218.127392 Z M56.9550587,79.2685282 C44.7981969,79.2707099 34.9413443,69.4171797 34.9391618,57.260052 C34.93698,45.1029244 44.7902948,35.2458562 56.9471566,35.2436736 C69.1040185,35.2414916 78.9608713,45.0950217 78.963054,57.2521493 C78.9641017,63.090208 76.6459976,68.6895714 72.5186979,72.8184433 C68.3913982,76.9473153 62.7929898,79.26748 56.9550587,79.2685282 M75.9206558,218.127392 L37.94995,218.127392 L37.94995,95.9665207 L75.9206558,95.9665207 L75.9206558,218.127392 Z M237.033403,0.0182577091 L18.8895249,0.0182577091 C8.57959469,-0.0980923971 0.124827038,8.16056231 -0.001,18.4706066 L-0.001,237.524091 C0.120519052,247.839103 8.57460631,256.105934 18.8895249,255.9977 L237.033403,255.9977 C247.368728,256.125818 255.855922,247.859464 255.999,237.524091 L255.999,18.4548016 C255.851624,8.12438979 247.363742,-0.133792868 237.033403,0.000790807055"/></svg>LinkedIn</a>
-    <a class="btn btn--resume" href="assets/resume/Chua-Heng-Li-Resume-Aug-2026.pdf" aria-label="Resume (PDF)"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>Résumé</a>
+    <a class="btn btn--resume" href="assets/resume/Chua-Heng-Li-Resume-Aug-2026.pdf" aria-label="Resume (PDF)"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"/></svg>Resume</a>
+   </div>
+    </div>
+    <div class="hero-skills" aria-label="Skills">
+      <div class="hero-skills-title">Skills</div>
+      <div class="hs"><div class="hs-k">Programming Languages</div><div class="hs-v">Python · C · C++</div></div>
+      <div class="hs"><div class="hs-k">Libraries &amp; Frameworks</div><div class="hs-v">pandas · NumPy · Plotly · Streamlit · scikit-learn</div></div>
+      <div class="hs"><div class="hs-k">Hardware &amp; Design</div><div class="hs-v">Arduino · KiCad · AutoCAD · Fusion360 · CST Microwave Studio</div></div>
+      <div class="hs"><div class="hs-k">Development</div><div class="hs-v">Git · GitHub</div></div>
+      <div class="hs"><div class="hs-k">Languages</div><div class="hs-v">English · Mandarin</div></div>
+  </div>
   </div>
 </div></header>
 
 <main class="wrap">
 
-<section id="education">
-  <h2 class="sec-title">Education</h2>
-
-  <div class="ex">
-    <div class="ex-title"><h3>Engineering Product Development</h3><span class="when">SUTD · 2024–present</span></div>
-    <div class="where">Electrical engineering specialisation · AI minor · cGPA 4.2/5.0 · SUTD Global Merit Scholarship</div>
-    <p>Embedded systems, electronics, machine learning, electromagnetics and engineering analysis.</p>
-  </div>
-
-  <div class="ex">
-    <div class="ex-title"><h3>A Levels</h3><span class="when">Jurong Pioneer Junior College · 2020–2021</span></div>
-    <div class="where">RP 86.25 · H3 Physics (Semiconductor Devices) with NTU</div>
-    <p>Quartermaster of the Guitar Ensemble; represented JPJC at the Singapore Youth Festival, earning a Certificate of Commendation.</p>
-  </div>
-</section>
-
-<section id="experience">
-  <h2 class="sec-title">Experience</h2>
-
-  <div class="ex">
-    <div class="ex-title"><h3>Operations Assistant</h3><span class="when">UOB Kay Hian · Mar–Sep 2024</span></div>
-    <div class="where">Dividend and corporate-action reconciliation</div>
-    <p>Reconciled dividend and corporate-action data across securities and client accounts, and audited records across thousands of accounts.</p>
-  </div>
-
-  <div class="ex">
-    <div class="ex-title"><h3>Vice President</h3><span class="when">APEX Club · Jan 2025–Jan 2026</span></div>
-    <div class="where">Student club leadership</div>
-    <p>Coordinated the One Raft One Nation kayaking event with 50+ participants from SMU, NUS and NTU.</p>
-  </div>
-
-  <div class="ex">
-    <div class="ex-title"><h3>DES Teaching Assistant</h3><span class="when">SUTD · Term 5, 2026</span></div>
-    <div class="where">Undergraduate teaching assistance</div>
-    <p>Prepared grading-scheme and exergy teaching materials.</p>
-  </div>
-
-  <div class="ex">
-    <div class="ex-title"><h3>GEO Mahidol</h3><span class="when">Mahidol University, Thailand · 2025</span></div>
-    <div class="where">Design thinking · innovation &amp; entrepreneurship</div>
-    <p>Completed an individual design-thinking case study on ride-hailing mobility in Thailand.</p>
-  </div>
-
-  <h2 class="sec-title" style="margin-top:34px">Recognition</h2>
-  <div class="recog">
-    <span><b>SEMI Tech Zoomers 2026</b> — 1st Prize</span>
-    <span><b>Sustainability Practice Prize</b> — DTI Prototype Dismantling Drive</span>
-    <span><b>One Raft One Nation</b> — APEX certificate</span>
-    <span><b>CodeChamps 2024</b> — participation</span>
-  </div>
-</section>
-
 <section id="projects">
   <h2 class="sec-title">Projects</h2>
+
+  <h3 class="sub-title">Engineering</h3>
 
   <div class="project">
     <div class="project-media">
       <a href="assets/projects/engineering/amr/final-prototype.jpg"><img src="assets/projects/engineering/amr/final-prototype.jpg" alt="Falali robot prototype"></a>
-      <div class="media-strip">
-        <a href="assets/projects/engineering/amr/arm-schematic.pdf"><img src="assets/projects/engineering/amr/arm-schematic.png" alt="Falali arm schematic"></a>
-        <a href="assets/projects/engineering/amr/laser-cutting.jpg"><img src="assets/projects/engineering/amr/laser-cutting.jpg" alt="Falali laser-cut component fabrication"></a>
-        <a href="assets/projects/engineering/amr/arm-subsystem-demo.mov"><img src="assets/projects/engineering/amr/final-prototype.jpg" alt="Falali arm subsystem demonstration"></a>
+      <div class="media-strip" aria-label="Falali project images">
+        <a class="media-thumb" href="assets/projects/engineering/amr/arm-schematic.png"><img src="assets/projects/engineering/amr/arm-schematic.png" alt="Falali arm subsystem schematic" loading="lazy" decoding="async"><span>Arm schematic</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/arm-pcb-layout.png"><img src="assets/projects/engineering/amr/arm-pcb-layout.png" alt="Falali arm subsystem PCB layout" loading="lazy" decoding="async"><span>Arm PCB</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/wheel-drive-pcb-layout.png"><img src="assets/projects/engineering/amr/wheel-drive-pcb-layout.png" alt="Falali wheel-drive PCB layout" loading="lazy" decoding="async"><span>Wheel PCB</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/amr/laser-cutting.jpg"><img src="assets/projects/engineering/amr/laser-cutting.jpg" alt="Falali laser-cut component fabrication" loading="lazy" decoding="async"><span>Fabrication</span></a>
+      </div>
+      <div class="media-videos" aria-label="Falali project demonstrations">
+        <div class="video-tile"><video controls muted preload="metadata" poster="assets/projects/engineering/amr/final-prototype.jpg" aria-label="Wheel-drive demonstration"><source src="assets/projects/engineering/amr/wheel-drive-demo.mp4" type="video/mp4"></video><span>Wheel-drive demo</span></div>
+        <div class="video-tile"><video controls muted preload="metadata" aria-label="Rail strength test"><source src="assets/projects/engineering/amr/rail-strength-test.mp4" type="video/mp4"></video><span>Rail strength test</span></div>
+        <div class="video-tile"><video controls muted preload="metadata" aria-label="Clamping demonstration"><source src="assets/projects/engineering/amr/clamped-demo.mp4" type="video/mp4"></video><span>Clamping demo</span></div>
       </div>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Falali — One AMR Fits All</h3><span class="date">30.007 EDI · 2026</span></div>
-      <div class="p-context">Autonomous mobile robot · embedded control</div>
-      <p class="p-desc">Team project developing an autonomous mobile-robot prototype for trolley transport in textile manufacturing. I designed the arm-subsystem PCB in KiCad and wrote the ESP32-S3 firmware covering the arm state machine, ToF sensing, servo control and safety interlocks.</p>
+      <div class="p-title"><h3>Falali - One AMR Fits All</h3><span class="date">30.007 EDI / 2026</span></div>
+      <div class="p-facts"><span>Role: PCB + firmware</span><span>Platform: ESP32-S3</span><span>Evidence: layouts, source, demos</span></div>
+      <p class="p-desc">Team project developing an autonomous mobile robot for trolley transport in textile manufacturing. I designed the arm and wheel-drive PCBs in KiCad and wrote the ESP32-S3 firmware for the arm state machine, time-of-flight sensing, servo control, and safety interlocks.</p>
       <div class="p-links">
         <a href="assets/projects/engineering/amr/arm-schematic.pdf">Arm schematic</a>
-        <a href="assets/projects/engineering/amr/arm-pcb-layout.pdf">PCB layout</a>
+        <a href="assets/projects/engineering/amr/arm-pcb-layout.pdf">Arm PCB layout</a>
+        <a href="assets/projects/engineering/amr/pcb/wheel-drive-schematic.pdf">Wheel-drive schematic</a>
+        <a href="assets/projects/engineering/amr/pcb/pdb-master-document.pdf">PCB master document</a>
+        <a href="assets/projects/engineering/amr/pcb/Wheel%20Drive%20Fab%20Output.zip">Wheel-drive fab output</a>
+        <a href="assets/projects/engineering/amr/system-flow.svg">System flow</a>
         <a href="assets/projects/engineering/amr/pdr.pdf">PDR</a>
         <a href="assets/projects/engineering/amr/firmware-source.zip">Firmware source</a>
       </div>
@@ -187,16 +216,15 @@ section{padding:62px 0;border-top:1px solid var(--line)}
   <div class="project">
     <div class="project-media">
       <a href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate kinematics output"></a>
-      <div class="media-strip">
-        <a href="assets/projects/engineering/alleviate/monte-carlo-torque.png"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Alleviate Monte Carlo torque output"></a>
-        <a href="assets/projects/engineering/alleviate/kinematic_model_carriage_displacement.html"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Interactive Alleviate kinematics model"></a>
-        <a href="assets/projects/engineering/alleviate/torque_model_heatmap.html"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Interactive Alleviate torque heatmap"></a>
+      <div class="media-strip" aria-label="Alleviate project images">
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate carriage displacement model output" loading="lazy" decoding="async"><span>Kinematics</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/monte-carlo-torque.png"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Alleviate Monte Carlo torque output" loading="lazy" decoding="async"><span>Monte Carlo</span></a>
       </div>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Alleviate — Sit-to-Stand Bed Assist</h3><span class="date">Engineering for Good · 2026</span></div>
-      <div class="p-context">Kinematics · Monte Carlo · motor sizing</div>
-      <p class="p-desc">Five-person project building a modular bed add-on to help elderly users sit to stand. I led the computational analysis: shaft-to-carriage kinematics and a one-million-run Monte Carlo model for motor sizing.</p>
+      <div class="p-title"><h3>Alleviate - Sit-to-Stand Bed Assist</h3><span class="date">Engineering for Good / 2026</span></div>
+      <div class="p-facts"><span>Role: computational analysis</span><span>Method: 1M-run Monte Carlo</span><span>Output: motor sizing</span></div>
+      <p class="p-desc">Five-person project developing a modular bed attachment to help elderly users move from sitting to standing. I led the computational analysis, including shaft-to-carriage kinematics and a one-million-run Monte Carlo model for motor sizing.</p>
       <div class="p-links">
         <a href="assets/projects/engineering/alleviate/kinematic_model_carriage_displacement.html">Kinematics model</a>
         <a href="assets/projects/engineering/alleviate/monte-carlo-torque.png">Monte Carlo output</a>
@@ -208,17 +236,17 @@ section{padding:62px 0;border-top:1px solid var(--line)}
 
   <div class="project">
     <div class="project-media">
-      <video controls muted preload="metadata" poster="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg"><source src="assets/projects/engineering/bird-deterrent/origaminah-demo.mp4" type="video/mp4"></video>
-      <div class="media-strip">
-        <a href="assets/projects/engineering/bird-deterrent/main-structure.png"><img src="assets/projects/engineering/bird-deterrent/main-structure.png" alt="Origaminah structure"></a>
-        <a href="assets/projects/engineering/bird-deterrent/circuit-side-view.png"><img src="assets/projects/engineering/bird-deterrent/circuit-side-view.png" alt="Origaminah circuit side view"></a>
-        <a href="assets/projects/engineering/bird-deterrent/wire-trunking.png"><img src="assets/projects/engineering/bird-deterrent/wire-trunking.png" alt="Origaminah wire trunking"></a>
+      <div class="video-feature"><video controls muted preload="metadata" poster="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg" aria-label="Origaminah prototype demonstration"><source src="assets/projects/engineering/bird-deterrent/origaminah-demo.mp4" type="video/mp4"></video><span>Play prototype demonstration</span></div>
+      <div class="media-strip" aria-label="Origaminah project images">
+        <a class="media-thumb" href="assets/projects/engineering/bird-deterrent/main-structure.png"><img src="assets/projects/engineering/bird-deterrent/main-structure.png" alt="Origaminah structure" loading="lazy" decoding="async"><span>Structure</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/bird-deterrent/circuit-side-view.png"><img src="assets/projects/engineering/bird-deterrent/circuit-side-view.png" alt="Origaminah circuit side view" loading="lazy" decoding="async"><span>Circuit</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/bird-deterrent/wire-trunking.png"><img src="assets/projects/engineering/bird-deterrent/wire-trunking.png" alt="Origaminah wire trunking" loading="lazy" decoding="async"><span>Wiring</span></a>
       </div>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Origaminah — Bird Deterrence</h3><span class="date">Design Thinking &amp; Innovation · 2025</span></div>
-      <div class="p-context">Product design · Arduino · motion sensing · electrical subsystem</div>
-      <p class="p-desc">Five-person team project developing Origaminah, a bird-deterrence device for a semi-outdoor SUTD canteen. I worked on the electrical subsystem: integrating the Arduino Nano, motion sensor, battery, flasher input and wire trunking, then routing the electrical output to the deployable origami modules.</p>
+      <div class="p-title"><h3>Origaminah - Bird Deterrence</h3><span class="date">Design Thinking &amp; Innovation / 2025</span></div>
+      <div class="p-facts"><span>Role: electrical subsystem</span><span>Platform: Arduino Nano</span><span>Output: deployable prototype</span></div>
+      <p class="p-desc">Five-person team project developing Origaminah, a bird-deterrence device for a semi-outdoor SUTD canteen. I developed the electrical subsystem by integrating the Arduino Nano, motion sensor, battery, flasher input, and wire trunking, then routing the output to the deployable origami modules.</p>
       <div class="p-links">
         <a href="assets/projects/engineering/bird-deterrent/circuit-side-view.png">Circuit design</a>
         <a href="assets/projects/engineering/bird-deterrent/main-structure.png">Structure</a>
@@ -233,16 +261,17 @@ section{padding:62px 0;border-top:1px solid var(--line)}
   <div class="project">
     <div class="project-media">
       <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-top-view.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-top-view.png" alt="CST top view of concentric-ring antenna"></a>
-      <div class="media-strip">
-        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png" alt="Concentric-ring antenna geometry and dimensions"></a>
-        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png" alt="Concentric-ring antenna S11 result"></a>
-        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png" alt="Concentric-ring antenna far-field directivity"></a>
+      <div class="media-strip" aria-label="Flexible antenna project images">
+        <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-model.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-model.png" alt="Concentric-ring antenna CST model" loading="lazy" decoding="async"><span>CST model</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png" alt="Concentric-ring antenna geometry and dimensions" loading="lazy" decoding="async"><span>Geometry</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png" alt="Concentric-ring antenna S11 result" loading="lazy" decoding="async"><span>S11</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png" alt="Concentric-ring antenna far-field directivity" loading="lazy" decoding="async"><span>Far field</span></a>
       </div>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Concentric-Circle Flexible Antenna</h3><span class="date">Electromagnetics · 2026</span></div>
-      <div class="p-context">CST simulation · RF design · VBA automation</div>
-      <p class="p-desc">Individual project designing and simulating a concentric-ring antenna for the 2.45 GHz ISM band. I built the CST model and parameterised VBA macro, including the substrate, ground plane, feed, two ring radiators and connecting bar. The model sweeps 1–4 GHz and includes S11, VSWR, efficiency, gain and far-field outputs.</p>
+      <div class="p-title"><h3>Concentric-Circle Flexible Antenna</h3><span class="date">Electromagnetics / 2026</span></div>
+      <div class="p-facts"><span>Scope: individual project</span><span>Target: 2.45 GHz ISM</span><span>Output: S11, VSWR, gain</span></div>
+      <p class="p-desc">Individual project designing and simulating a concentric-ring antenna for the 2.45 GHz ISM band. I built the CST model and a parameterised VBA macro covering the substrate, ground plane, feed, two ring radiators, and connecting bar. The model sweeps from 1 to 4 GHz and produces S11, VSWR, efficiency, gain, and far-field results.</p>
       <div class="p-links">
         <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png">Geometry and dimensions</a>
         <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png">S11 result</a>
@@ -259,9 +288,9 @@ section{padding:62px 0;border-top:1px solid var(--line)}
       <a href="assets/projects/engineering/ml/battery-sem-sample.jpg"><img src="assets/projects/engineering/ml/battery-sem-sample.jpg" alt="Battery SEM classification sample"></a>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Engineering Machine Learning</h3><span class="date">CaDDE · 2026</span></div>
-      <div class="p-context">Machine learning · modelling</div>
-      <p class="p-desc">Individual project applying machine learning to engineering problems: electrochemical-stress regression, engine-pump anomaly detection and battery SEM image classification.</p>
+      <div class="p-title"><h3>Engineering Machine Learning</h3><span class="date">CaDDE / 2026</span></div>
+      <div class="p-facts"><span>Scope: individual project</span><span>Tasks: regression + anomaly detection</span><span>Image task: battery SEM</span></div>
+      <p class="p-desc">Individual project applying machine-learning methods to three engineering datasets: electrochemical-stress regression, engine-pump anomaly detection, and battery SEM image classification.</p>
       <div class="p-links"><a href="assets/projects/engineering/ml/individual-report.docx">Individual report</a></div>
     </div>
   </div>
@@ -271,34 +300,45 @@ section{padding:62px 0;border-top:1px solid var(--line)}
       <a href="assets/projects/engineering/modelling/parachute-cover.jpg"><img src="assets/projects/engineering/modelling/parachute-cover.jpg" alt="Parachute drop modelling report cover"></a>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Parachute Drop Modelling</h3><span class="date">Modelling · 2024</span></div>
-      <div class="p-context">Experimental data · regression · optimisation</div>
-      <p class="p-desc">Team data-analysis project connecting measured parachute drops to a terminal-velocity and drag model using regression.</p>
+      <div class="p-title"><h3>Parachute Drop Modelling</h3><span class="date">Modelling / 2024</span></div>
+      <div class="p-facts"><span>Scope: team analysis</span><span>Model: terminal velocity</span><span>Method: regression</span></div>
+      <p class="p-desc">Team data-analysis project linking measured parachute-drop data to a terminal-velocity and drag model using regression.</p>
       <div class="p-links"><a href="assets/projects/engineering/modelling/parachute-study.pdf">Study</a></div>
     </div>
   </div>
+
+  <h3 class="sub-title">Data &amp; Finance</h3>
 
   <div class="project">
     <div class="project-media">
       <a href="assets/projects/finance/tracker-sample-preview.png"><img src="assets/projects/finance/tracker-sample-preview.png" alt="Portfolio tracker sample dashboard"></a>
     </div>
     <div class="project-copy">
-      <div class="p-title"><h3>Portfolio Tracker &amp; Analyzer</h3><span class="date">2025–present</span></div>
-      <div class="p-context">Python data engineering · SQLite · Streamlit</div>
-      <p class="p-desc">Personal project that retrieves Moomoo OpenD account data, cleans it, stores daily history in SQLite and serves a Streamlit dashboard. Real account data stays private; the preview uses sample data.</p>
+      <div class="p-title"><h3>Portfolio Tracker &amp; Analyzer</h3><span class="date">2025-present</span></div>
+      <div class="p-facts"><span>Stack: Python + SQLite</span><span>Interface: Streamlit</span><span>Privacy: sample data only</span></div>
+      <p class="p-desc">Personal data project that ingests Moomoo OpenD account data, cleans it, stores daily history in SQLite, and serves a Streamlit dashboard. The published preview uses sample data only; live holdings remain private.</p>
       <div class="p-links">
         <a href="https://github.com/chuahengli/Stock-Portfolio-project">GitHub repository</a>
         <a href="assets/projects/finance/tracker-sample-preview.png">Sample dashboard</a>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="project project--text">
-    <div class="project-copy">
-      <div class="p-title"><h3>Equity Research Program</h3><span class="date">Ongoing</span></div>
-      <div class="p-context">Structured research · quantitative analysis</div>
-      <p class="p-desc">A structured research program covering AI infrastructure, semiconductors, fintech, memory, power electronics, space and defence. Work follows a brief-to-thesis-to-valuation workflow using Python tooling. The research is AI-assisted: my methodology and decisions are mine, with tool-assisted scanning disclosed.</p>
-      <div class="p-links"><a href="https://github.com/chuahengli">GitHub profile</a></div>
+<section id="awards">
+  <h2 class="sec-title">Recognition</h2>
+  <div class="awards">
+    <div class="award-card">
+      <h3>SEMI Tech Zoomers 2026 - 1st Prize</h3>
+      <a href="assets/recognition/semi-tech-zoomers-1st-prize.png"><img src="assets/recognition/semi-tech-zoomers-1st-prize.png" alt="SEMI Tech Zoomers 2026 1st Prize certificate"></a>
+    </div>
+    <div class="award-card">
+      <h3>Sustainability Practice Prize - DTI Prototype Dismantling Drive</h3>
+      <a href="assets/recognition/dti-sustainability-prize.png"><img src="assets/recognition/dti-sustainability-prize.png" alt="DTI Sustainability Practice Prize certificate"></a>
+    </div>
+    <div class="award-card">
+      <h3>One Raft One Nation - APEX certificate</h3>
+      <a href="assets/recognition/one-raft-one-nation.png"><img src="assets/recognition/one-raft-one-nation.png" alt="One Raft One Nation APEX certificate"></a>
     </div>
   </div>
 </section>

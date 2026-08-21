@@ -8,11 +8,11 @@ Single-page static portfolio for **Heng Li (Chua)**, an undergraduate Engineerin
 
 ## Overview
 
-A lightweight, fast, framework-free personal site that presents engineering work across three areas:
+A lightweight, fast, framework-free personal site that presents engineering work:
 
 1. **Engineering projects** — embedded firmware (ESP32-S3/Arduino), electronics prototyping, custom KiCad PCB design, engineering analysis, machine learning and electromagnetics/antenna work.
 2. **Python, data & equity research** — the portfolio tracker and a structured quantitative research programme.
-3. **Experience & education** — SUTD, UOB Kay Hian, leadership, programmes and technical toolkit.
+3. **Recognition** — certificates and competition results. Career detail lives on the résumé (linked from the hero).
 
 Every project card links to real, first-party evidence: schematics, PCB layouts, source code zips, demo videos, interactive HTML models, reports, certificates and decks.
 
