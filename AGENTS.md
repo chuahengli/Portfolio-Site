@@ -107,11 +107,15 @@ Hard rules:
   (shows the clamping action), NOT the short 11.4s "Clamped_on_demo.mp4".
   The arm subsystem demo was converted .MOV -> MP4 (H.264+AAC) for browsers;
   the .mov staging file was deleted. Poster frame for the arm demo extracted.
-- p-links (9, in order): Arm subsystem block diagram · System flow diagram ·
-  Arm schematic · Arm PCB layout · Wheel-drive schematic · Arm fab output ·
-  Wheel-drive fab output · PDR deck · Firmware source.
-- "PDR deck" = the final presentation slides to the instructors (top-level
-  "EDI Presentation 1 and 2 and 3 (PDR).pdf"). NOT the SDR deck.
+- p-links (2 only, user decision Aug-24): "Final Presentation Slides" (pdr.pdf)
+  and "TrolleyBot repository" -> https://github.com/lnpanini/TrolleyBot
+  (external link, target=_blank rel=noopener). The arm-fab-output.zip,
+  Wheel Drive Fab Output.zip and firmware-source.zip links were removed by
+  user request — the TrolleyBot repo is now the canonical home for fab outputs
+  and firmware. The staged zip files still exist in assets/projects/engineering/amr/
+  but are unlinked; candidates for deletion at next housekeeping pass.
+- "PDR deck"/"Final Presentation Slides" = the final presentation slides to the
+  instructors (top-level "EDI Presentation 1 and 2 and 3 (PDR).pdf"). NOT the SDR deck.
 - Course naming: 30.007 = Engineering Design Innovation (EDI) — the course
   unit, not an acronym on its own. Public label on the card is the full name:
   "30.007 Engineering Design Innovation / 2026". Never display bare "EDI".
