@@ -76,6 +76,9 @@ section{padding:76px 0;border-top:1px solid var(--line)}
 .project-media>a:first-child{display:block}
 .project-media>a img,.project-media>img:first-child,.project-media>video{width:100%;height:250px;object-fit:cover;
   border-radius:12px;background:var(--bg)}
+.project-media .media-poster{display:block;margin-bottom:10px}.project-media .poster-contain{width:100%;max-height:340px;object-fit:contain;background:var(--bg);border-radius:12px}
+.project-media .media-poster>span{display:block;font-size:12px;color:var(--muted);padding:5px 2px 0}
+.project-media .media-poster>span:last-child{padding-bottom:2px}
 .project-media .media-svg{object-fit:contain;height:300px;padding:14px;background:#f8fafc}
 .project-media>video{height:250px;object-fit:contain}
 .media-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
@@ -85,6 +88,7 @@ section{padding:76px 0;border-top:1px solid var(--line)}
   overflow:hidden;background:var(--panel)}
 .media-thumb img{width:100%;height:120px;object-fit:cover;border-radius:6px}
 .media-thumb img.thumb-contain{object-fit:contain;background:#f8fafc}
+.media-thumb img.thumb-fit{object-fit:contain;background:var(--panel)}
 .media-thumb span{display:block;padding:5px 6px;font-size:12px;color:var(--muted);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .media-thumb:hover{border-color:var(--accent);text-decoration:none}
@@ -214,7 +218,7 @@ section{padding:76px 0;border-top:1px solid var(--line)}
         <a class="media-thumb" href="assets/projects/engineering/amr/wheel-pcb-3d.png"><img src="assets/projects/engineering/amr/wheel-pcb-3d.png" alt="Falali wheel-drive PCB 3D view" loading="lazy" decoding="async"><span>Wheel PCB 3D</span></a>
       </div>
       <div class="media-videos media-videos--row" aria-label="Falali project demonstrations">
-        <div class="video-tile"><video controls muted preload="metadata" poster="assets/projects/engineering/amr/final-prototype.jpg" aria-label="Wheel-drive demonstration"><source src="assets/projects/engineering/amr/wheel-drive-demo.mp4" type="video/mp4"></video><span>Wheel-drive demo</span></div>
+        <div class="video-tile"><video controls muted preload="metadata" poster="assets/projects/engineering/amr/wheel-drive-poster.jpg" aria-label="Wheel-drive demonstration"><source src="assets/projects/engineering/amr/wheel-drive-demo.mp4" type="video/mp4"></video><span>Wheel-drive demo</span></div>
         <div class="video-tile"><video controls muted preload="metadata" aria-label="Rail strength test"><source src="assets/projects/engineering/amr/rail-strength-test.mp4" type="video/mp4"></video><span>Rail strength test</span></div>
         <div class="video-tile"><video controls muted preload="metadata" poster="assets/projects/engineering/amr/arm-demo-poster.jpg" aria-label="Arm subsystem demonstration"><source src="assets/projects/engineering/amr/arm-subsystem-demo.mp4" type="video/mp4"></video><span>Arm subsystem demo</span></div>
         <div class="video-tile"><video controls muted preload="metadata" aria-label="Clamping demonstration"><source src="assets/projects/engineering/amr/clamped-demo.mp4" type="video/mp4"></video><span>Clamping demo</span></div>
@@ -234,55 +238,9 @@ section{padding:76px 0;border-top:1px solid var(--line)}
   </div>
 <div class="project">
     <div class="project-media">
-      <a href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate kinematics output"></a>
-      <div class="media-strip" aria-label="Alleviate project images">
-        <a class="media-thumb" href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate carriage displacement model output" loading="lazy" decoding="async"><span>Kinematics</span></a>
-        <a class="media-thumb" href="assets/projects/engineering/alleviate/monte-carlo-torque.png"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Alleviate Monte Carlo torque output" loading="lazy" decoding="async"><span>Monte Carlo</span></a>
-      </div>
-    </div>
-    <div class="project-copy">
-      <div class="p-title"><h3>Alleviate - Sit-to-Stand Bed Assist</h3><span class="date">Engineering for Good / 2026</span></div>
-      <div class="p-facts"><span>Role: computational analysis</span><span>Method: 1M-run Monte Carlo</span><span>Output: motor sizing</span></div>
-      <p class="p-desc">Five-person project developing a modular bed attachment to help elderly users move from sitting to standing. I led the computational analysis, including shaft-to-carriage kinematics and a one-million-run Monte Carlo model for motor sizing.</p>
-      <div class="p-links">
-        <a href="assets/projects/engineering/alleviate/kinematic_model_carriage_displacement.html">Kinematics model</a>
-        <a href="assets/projects/engineering/alleviate/monte-carlo-torque.png">Monte Carlo output</a>
-        <a href="assets/projects/engineering/alleviate/torque_model_heatmap.html">Torque heatmap</a>
-        <a href="assets/projects/engineering/alleviate/milestones/milestone-2-hengli-portion.pdf">Milestone section</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-media">
-      <div class="video-feature"><video controls muted preload="metadata" poster="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg" aria-label="Origaminah prototype demonstration"><source src="assets/projects/engineering/bird-deterrent/origaminah-demo.mp4" type="video/mp4"></video><span>Play prototype demonstration</span></div>
-      <div class="media-strip" aria-label="Origaminah project images">
-        <a class="media-thumb" href="assets/projects/engineering/bird-deterrent/main-structure.png"><img src="assets/projects/engineering/bird-deterrent/main-structure.png" alt="Origaminah structure" loading="lazy" decoding="async"><span>Structure</span></a>
-        <a class="media-thumb" href="assets/projects/engineering/bird-deterrent/circuit-side-view.png"><img src="assets/projects/engineering/bird-deterrent/circuit-side-view.png" alt="Origaminah circuit side view" loading="lazy" decoding="async"><span>Circuit</span></a>
-        <a class="media-thumb" href="assets/projects/engineering/bird-deterrent/wire-trunking.png"><img src="assets/projects/engineering/bird-deterrent/wire-trunking.png" alt="Origaminah wire trunking" loading="lazy" decoding="async"><span>Wiring</span></a>
-      </div>
-    </div>
-    <div class="project-copy">
-      <div class="p-title"><h3>Origaminah - Bird Deterrence</h3><span class="date">Design Thinking &amp; Innovation / 2025</span></div>
-      <div class="p-facts"><span>Role: electrical subsystem</span><span>Platform: Arduino Nano</span><span>Output: deployable prototype</span></div>
-      <p class="p-desc">Five-person team project developing Origaminah, a bird-deterrence device for a semi-outdoor SUTD canteen. I developed the electrical subsystem by integrating the Arduino Nano, motion sensor, battery, flasher input, and wire trunking, then routing the output to the deployable origami modules.</p>
-      <div class="p-links">
-        <a href="assets/projects/engineering/bird-deterrent/circuit-side-view.png">Circuit design</a>
-        <a href="assets/projects/engineering/bird-deterrent/main-structure.png">Structure</a>
-        <a href="assets/projects/engineering/bird-deterrent/motion-sensor.png">Motion sensor</a>
-        <a href="assets/projects/engineering/bird-deterrent/wire-trunking.png">Wire trunking</a>
-        <a href="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg">Project poster</a>
-        <a href="assets/projects/engineering/bird-deterrent/origaminah-demo.mp4">Prototype demonstration</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-media">
       <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-top-view.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-top-view.png" alt="CST top view of concentric-ring antenna"></a>
       <div class="media-strip" aria-label="Flexible antenna project images">
         <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-model.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-model.png" alt="Concentric-ring antenna CST model" loading="lazy" decoding="async"><span>CST model</span></a>
-        <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png" alt="Concentric-ring antenna geometry and dimensions" loading="lazy" decoding="async"><span>Geometry</span></a>
         <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png" alt="Concentric-ring antenna S11 result" loading="lazy" decoding="async"><span>S11</span></a>
         <a class="media-thumb" href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png"><img src="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png" alt="Concentric-ring antenna far-field directivity" loading="lazy" decoding="async"><span>Far field</span></a>
       </div>
@@ -292,7 +250,6 @@ section{padding:76px 0;border-top:1px solid var(--line)}
       <div class="p-facts"><span>Scope: individual project</span><span>Target: 2.45 GHz ISM</span><span>Output: S11, VSWR, gain</span></div>
       <p class="p-desc">Individual project designing and simulating a concentric-ring antenna for the 2.45 GHz ISM band. I built the CST model and a parameterised VBA macro covering the substrate, ground plane, feed, two ring radiators, and connecting bar. The model sweeps from 1 to 4 GHz and produces S11, VSWR, efficiency, gain, and far-field results.</p>
       <div class="p-links">
-        <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-dimensions.png">Geometry and dimensions</a>
         <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-s11.png">S11 result</a>
         <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-vswr.png">VSWR result</a>
         <a href="assets/projects/engineering/antenna/concentric-circle/concentric-ring-directivity.png">Far-field directivity</a>
@@ -304,25 +261,75 @@ section{padding:76px 0;border-top:1px solid var(--line)}
 
   <div class="project">
     <div class="project-media">
+      <a href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate kinematics output"></a>
+      <div class="video-feature"><video controls muted preload="metadata" poster="assets/projects/engineering/alleviate/prototype-demo-poster.jpg" aria-label="Alleviate prototype demonstration"><source src="assets/projects/engineering/alleviate/prototype-demo.mp4" type="video/mp4"></video><span>Play prototype demonstration</span></div>
+      <div class="media-strip" aria-label="Alleviate project images">
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/kinematics-displacement.png"><img src="assets/projects/engineering/alleviate/kinematics-displacement.png" alt="Alleviate carriage displacement model output" loading="lazy" decoding="async"><span>Kinematics</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/monte-carlo-torque.png"><img src="assets/projects/engineering/alleviate/monte-carlo-torque.png" alt="Alleviate Monte Carlo torque output" loading="lazy" decoding="async"><span>Monte Carlo</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/proto-1.jpg"><img src="assets/projects/engineering/alleviate/proto-1.jpg" alt="Alleviate electronics assembly with Arduino, motor driver and DC motor" loading="lazy" decoding="async"><span>Electronics assembly</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/proto-2.jpg"><img src="assets/projects/engineering/alleviate/proto-2.jpg" alt="3D model of the Alleviate prototype" loading="lazy" decoding="async"><span>3D model</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/proto-3.jpg"><img src="assets/projects/engineering/alleviate/proto-3.jpg" alt="Physical bed without the lifting mechanism attached" loading="lazy" decoding="async"><span>Bed frame</span></a>
+        <a class="media-thumb" href="assets/projects/engineering/alleviate/proto-4.jpg"><img src="assets/projects/engineering/alleviate/proto-4.jpg" alt="3D printed mechanism attached to the bed" loading="lazy" decoding="async"><span>3D print fitted</span></a>
+      </div>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Alleviate - Sit-to-Stand Bed Assist</h3><span class="date">Engineering for Good / 2026</span></div>
+      <div class="p-facts"><span>Role: computational analysis</span><span>Method: 1M-run Monte Carlo</span><span>Output: motor sizing</span></div>
+      <p class="p-desc">Five-person project developing a modular bed attachment that helps elderly users move from sitting to standing: a button press drives synchronised motors to lower the legs to the ground, hold the user as the frame rises, then roll the mat forward. I led the computational analysis — shaft-to-carriage kinematics and a one-million-run Monte Carlo model — which sized the motors at 11.2–13.3 RPM for a 50 cm transfer in about a minute, with torque above 1.02 N·m at a 2× safety factor.</p>
+      <div class="p-links">
+        <a href="assets/projects/engineering/alleviate/kinematic_model_carriage_displacement.html">Kinematics model</a>
+        <a href="assets/projects/engineering/alleviate/torque_model_heatmap.html">Torque heatmap</a>
+        <a href="assets/projects/engineering/alleviate/milestones/milestone-2.pdf">Milestone 2 presentation</a>
+        <a href="assets/projects/engineering/alleviate/cp02-g3-poster.pdf">Final poster</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="project">
+    <div class="project-media">
       <a href="assets/projects/engineering/ml/battery-sem-sample.jpg"><img src="assets/projects/engineering/ml/battery-sem-sample.jpg" alt="Battery SEM classification sample"></a>
     </div>
     <div class="project-copy">
       <div class="p-title"><h3>Engineering Machine Learning</h3><span class="date">CaDDE / 2026</span></div>
       <div class="p-facts"><span>Scope: individual project</span><span>Tasks: regression + anomaly detection</span><span>Image task: battery SEM</span></div>
-      <p class="p-desc">Individual project applying machine-learning methods to three engineering datasets: electrochemical-stress regression, engine-pump anomaly detection, and battery SEM image classification.</p>
-      <div class="p-links"><a href="assets/projects/engineering/ml/individual-report.docx">Individual report</a></div>
+      <p class="p-desc">Individual CaDDE project applying machine learning across three engineering tasks: predicting an electrochemical stress index from battery data with a tuned XGBoost regressor (internal resistance the strongest predictor), detecting engine-pump anomalies with an autoencoder, and classifying healthy / cracked / fragmented battery SEM images with a fine-tuned CNN — differential learning rates lifted 5-fold cross-validation accuracy from 0.72 to 0.88.</p>
+      <div class="p-links"><a href="assets/projects/engineering/ml/individual-report.pdf">Individual report</a><a href="assets/projects/engineering/ml/battery-sem-improved.ipynb">Battery SEM notebook</a><a href="assets/projects/engineering/ml/electrochem-stress.ipynb">Electrochemical-stress notebook</a><a href="assets/projects/engineering/ml/engine-anomaly.ipynb">Engine anomaly notebook</a></div>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-media">
+      <a class="media-poster" href="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg"><img class="poster-contain" src="assets/projects/engineering/bird-deterrent/origaminah-poster.jpg" alt="Origaminah project poster"><span>Final poster</span></a>
+      <div class="video-feature"><video controls muted preload="metadata" poster="assets/projects/engineering/bird-deterrent/origaminah-demo-poster.jpg" aria-label="Origaminah prototype demonstration"><source src="assets/projects/engineering/bird-deterrent/origaminah-demo-h264.mp4" type="video/mp4"></video><span>Play prototype demonstration</span></div>
+      <a class="media-poster" href="assets/projects/engineering/bird-deterrent/sustainability-prize.pdf"><img class="poster-contain" src="assets/projects/engineering/bird-deterrent/sustainability-prize-preview.png" alt="DTI Sustainability Practice Prize certificate"><span>DTI Sustainability Practice Prize</span></a>
+    </div>
+    <div class="project-copy">
+      <div class="p-title"><h3>Origaminah - Bird Deterrence</h3><span class="date">Design Thinking &amp; Innovation / 2025</span></div>
+      <div class="p-facts"><span>Role: electrical subsystem</span><span>Platform: Arduino Nano</span><span>Output: deployable prototype</span></div>
+      <p class="p-desc">Five-person team project developing Origaminah, a bird-deterrence device for a semi-outdoor SUTD canteen. When a bird passes, the PIR motion sensor triggers a 3D-printed actuation mechanism that opens the structure to scare it off; the printed modules are wrapped in reflective material, which birds avoid. I developed the electrical subsystem — Arduino Nano, motion sensor, battery, flasher input and wire trunking — routed to the deployable modules, and the team's prototype dismantling drive earned the DTI Sustainability Practice Prize.</p>
+      <div class="p-links">
+        <a href="assets/projects/engineering/bird-deterrent/circuit-side-view.png">Circuit design</a>
+        <a href="assets/projects/engineering/bird-deterrent/main-structure.png">Structure</a>
+        <a href="assets/projects/engineering/bird-deterrent/motion-sensor.png">Motion sensor</a>
+        <a href="assets/projects/engineering/bird-deterrent/wire-trunking.png">Wire trunking</a>
+</div>
     </div>
   </div>
 
   <div class="project">
     <div class="project-media">
       <a href="assets/projects/engineering/modelling/parachute-cover.jpg"><img src="assets/projects/engineering/modelling/parachute-cover.jpg" alt="Parachute drop modelling report cover"></a>
+      <div class="video-feature"><video controls muted preload="metadata" poster="assets/projects/engineering/modelling/parachute-drop-poster.jpg" aria-label="Parachute drop demonstration"><source src="assets/projects/engineering/modelling/parachute-drop-demo.mp4" type="video/mp4"></video><span>Play drop demonstration</span></div>
+      <div class="media-strip" aria-label="Parachute Grasshopper model image">
+        <a class="media-thumb" href="assets/projects/engineering/modelling/photo_2024-12-11_10-53-47.jpg"><img class="thumb-fit" src="assets/projects/engineering/modelling/photo_2024-12-11_10-53-47.jpg" alt="Grasshopper parametric parachute 3D model" loading="lazy" decoding="async"><span>Grasshopper model</span></a>
+      </div>
     </div>
     <div class="project-copy">
       <div class="p-title"><h3>Parachute Drop Modelling</h3><span class="date">Modelling / 2024</span></div>
       <div class="p-facts"><span>Scope: team analysis</span><span>Model: terminal velocity</span><span>Method: regression</span></div>
-      <p class="p-desc">Team data-analysis project linking measured parachute-drop data to a terminal-velocity and drag model using regression.</p>
-      <div class="p-links"><a href="assets/projects/engineering/modelling/parachute-study.pdf">Study</a></div>
+      <p class="p-desc">Team project on 10.013 Modelling &amp; Analysis modelling an airdropped cargo: a parachute drop from about 8 m, using circular parachutes of radius r with a central rectangular air vent and measured acceleration data. Linear regression on r² yielded mr = 73.334 r² + 10.777, linking total mass and drag coefficient; my contribution covered parts 1(a)–2(c) of the SC08 (Group 9) submission, with a Rhino/Grasshopper parachute model from the DTP component.</p>
+      <div class="p-links"><a href="assets/projects/engineering/modelling/parachute-data.xlsx">Data</a><a href="assets/projects/engineering/modelling/parachute-report.pdf">Team report</a></div>
     </div>
   </div>
 
@@ -330,12 +337,12 @@ section{padding:76px 0;border-top:1px solid var(--line)}
 
   <div class="project">
     <div class="project-media">
-      <a href="assets/projects/finance/tracker-sample-linkedin.jpg"><img src="assets/projects/finance/tracker-sample-linkedin.jpg" alt="Portfolio tracker sample dashboard"></a>
+      <a class="media-poster" href="assets/projects/finance/tracker-sample-linkedin.jpg"><img class="poster-contain" src="assets/projects/finance/tracker-sample-linkedin.jpg" alt="Portfolio tracker sample dashboard"><span>Sample dashboard view</span></a>
     </div>
     <div class="project-copy">
       <div class="p-title"><h3>Portfolio Tracker &amp; Analyzer</h3><span class="date">2025-present</span></div>
       <div class="p-facts"><span>Stack: Python + SQLite</span><span>Interface: Streamlit</span><span>Privacy: sample data only</span></div>
-      <p class="p-desc">Personal data project that ingests Moomoo OpenD account data, cleans it, stores daily history in SQLite, and serves a Streamlit dashboard. The published preview uses sample data only; live holdings remain private.</p>
+      <p class="p-desc">Personal data project that syncs brokerage account data through the Moomoo OpenD API on a daily schedule, cleans it, and stores it in SQLite. A Streamlit dashboard (Overview, Positions, P/L, Trade Ledger tabs) computes time-weighted return from the earliest recorded snapshot and keeps dividend and coupon income distinct from deposits and withdrawals. The published preview uses sample data only; live holdings remain private.</p>
       <div class="p-links">
         <a href="https://github.com/chuahengli/Stock-Portfolio-project">GitHub repository</a>
         <a href="assets/projects/finance/tracker-sample-linkedin.jpg">Sample dashboard</a>

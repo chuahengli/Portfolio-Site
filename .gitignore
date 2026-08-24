@@ -17,3 +17,5 @@ Desktop.ini
 # Put anything you do NOT want on the public site in this folder
 # and it will never be committed. The folder is gitignored entirely.
 /private/
+
+AGENTS.md
